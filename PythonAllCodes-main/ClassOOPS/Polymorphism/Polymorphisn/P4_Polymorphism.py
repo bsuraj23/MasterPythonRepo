@@ -1,0 +1,18 @@
+class Warrior:
+    def attack(self):
+        print("Warrior slashes with sword!")
+
+class Archer:
+    def attack(self):
+        print("Archer shoots an arrow!")
+
+class Mage:
+    def attack(self):
+        print("Mage casts a spell!")
+
+players = [Warrior(), Archer(), Mage()]
+
+for player in players:
+    player.attack()
+
+#

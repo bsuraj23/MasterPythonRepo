@@ -1,0 +1,4 @@
+raw input 
+input 
+int(input)
+how does it change with other data type on boolean(input("Please enter the value "))

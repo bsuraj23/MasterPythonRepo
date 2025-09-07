@@ -1,0 +1,54 @@
+
+
+Thread 
+
+Runnable 
+
+
+a= 90;
+
+
+
+// s
+
+
+String input = "this is my laptop"
+//convert str to char array ;
+char[] charArray = input.ToCharArray(input);
+System.out.println(charArray);
+
+// tempStr \s
+int count = 0;
+char space = "\s";
+
+for (int i = 0;i<=charArray .len();i++)
+{
+
+char c[] = new char[26];
+if(temp == space){
+//space then break ;
+
+
+}
+if(tempCount >count )
+count = tempCount;
+}
+
+StringTokenizer strTObj = new StringTokenizer();
+
+map 
+filter 
+reduce 
+String inputString = "this is my laptop"
+List<>  obj = Stream.filter(temp -> (inputString ) { 
+//each token size of it 
+for()
+{
+
+
+}
+
+
+   }).toCollect().(System.out.print(str))
+
+

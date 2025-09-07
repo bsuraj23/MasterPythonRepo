@@ -1,0 +1,15 @@
+Recursion
+Algorithm Run Time 
+Array
+Linkedlist
+Stack
+Queue
+Binary Tree
+Avl Tree
+Binary Heap
+Hashing 
+Sorting 
+Graph
+Greedy Algorithm 
+Divide and Conquor 
+Dynamiic Programming 

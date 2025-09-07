@@ -1,0 +1,11 @@
+a=12
+print(a)
+a="optimised"
+print(a)
+a=12.0
+print(a)
+a=True
+print(a)
+a='s'
+print(a)
+type(a)

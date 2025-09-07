@@ -1,0 +1,250 @@
+Table of Contents (deduplicated)
+Understanding of Framework
+Why is Framework?
+What is Web App Framework?
+What is MVC Architecture?
+Understanding of Django Web App Framework
+Pre-requisites
+Django Setup
+Virtual Environment
+Python installation
+Django installation
+Uninstallation of Django and Python
+VS Code
+Extensions in VS Code for development
+Django Project Creation
+
+
+Understanding Django Project Directory
+Settings.py
+Aswi.py
+Wsgi.py
+Manage.py
+Urls.py
+
+
+
+Creating Application in Django Project
+Understanding the files in Application
+Start and Stop Development Server
+
+
+
+Understanding Request and Response
+
+
+Function-Based Views
+Understanding of MVT Architecture
+
+
+URL Dispatcher or URL Patterns in Project Directory
+Path()
+Name
+Template
+
+
+Creating Multiple Applications
+
+Dynamic URL
+
+Custom Path Converters
+
+URL Dispatcher or URL Patterns in Application
+
+
+Include
+Namespace
+App Registration
+Understanding Template in Django Project
+Render
+HttpResponse
+Request
+Template Folder Structure
+Setup Template Path in Settings.py
+Templates Directory
+Installed_Application
+Template Directory
+
+
+]
+Setup Static Files in Settings.py
+staticfiles_dirs
+Load static
+Static with URL
+Rendering Templates with Context
+Application-Wise Template Rendering
+Writing Template Files
+Injecting CSS Styles Inside Templates
+
+
+Understanding the DTL (Django Template Language) Inside Template
+{{ variable }}
+{% for %}
+Pre-defined for Loop Variables
+{% if %}
+Filters
+{% include %}
+Dynamic Template Files
+Templates Inside Application
+How to Use JavaScript Inside Application
+Template Inheritance
+Extends
+Block and End Block
+Base Template
+Parent Template
+Child Template
+Template Inheritance with Static Files
+
+
+
+
+Using Bootstrap in Django Templates
+Bootstrap.js
+jQuery.js
+Popper.js
+Model
+Create Super User
+Migrate/Create Database
+Create Model
+Register Model
+Create Query Object
+CRUD Operations
+Model Fields
+
+
+
+
+Django Admin Application
+Create User
+Create Group
+Create Permission
+Assign Permission
+Forms
+Model Form
+Model Form Inheritance
+Forms API
+From Django import Forms
+Configure Attributes
+ID, Label, Ordering
+Form Widgets
+Get and Post Methods
+CSRF
+Get Form Data and Validate
+Post Form Data to Server
+HttpResponseRedirect
+Form Fields
+
+
+Cleaning and Validating Form Field
+Validating Complete Form Data at a Time
+Built-in Validators and Custom Validators
+Match Password and Re-enter Password Field
+Form Errors and Field Errors
+CRUD Operations with Forms
+
+
+
+
+ORM
+Queryset
+All
+Get
+Filter
+Query
+Values
+Values_list
+Union
+Intersection
+Queryset API Field Lookup
+Aggregation
+Aggregation Functions
+Query Objects
+Model Inheritance
+Model Manager
+Model Relations
+One-to-One
+Many-to-One
+Many-to-Many
+Messages Framework
+Level
+Tag
+
+
+CRUD Project with Function-Based Views
+
+Authentication and Authorization
+User Authentication System
+Django.contrib.auth
+Creating User
+Changing Password
+Authenticating User
+Permissions to Users
+Creating Groups
+Login as User
+Logout
+Abstract User
+Auth_User
+Create Registration Form
+UserCreationForm
+User Model
+Create Login Form
+Authenticate()
+Login()
+Logout()
+AuthenticationForm()
+Is_authenticated
+Change Password
+User Profile
+Admin Profile
+Profile Changing
+Authorization and Permissions
+Pagination with Function-Based View
+New Features in Django 4 Version
+Cookies
+Session Framework
+Page Session Expiration
+File-Based Session
+Counting Page and Login
+Cache and Per Site Cache
+Cache Per View
+Template Fragmentation
+Low-Level Cache
+Signals
+Built-in Signals
+Custom Signals
+IP Tracking
+Middleware
+Built-in Middleware
+Custom Middleware
+Function-Based Middleware
+Get_response()
+Middleware Hooks
+Template Response
+UnderConstructionMiddleware
+
+
+
+Class-Based Views
+View
+TemplateView
+RedirectView
+FormView
+ListView
+CreateView
+DeleteView
+UpdateView
+DetailView
+Function-Based Authentication Views
+Login_required
+Customization
+Authentication Settings
+Database Configuration
+PostgreSQL
+MongoDB
+
+
+
+Pagination with Class-Based Views
+
+
+Security in Django
