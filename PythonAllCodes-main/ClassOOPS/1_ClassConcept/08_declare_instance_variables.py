@@ -1,13 +1,19 @@
 # Where we can declare Instance Variables
+#inside constructor
+#inside instance method 
+#outside the class using object reference variable
+
 class Student:
     def __init__(self, name):
         self.name = name
+    # instance method example of declaring instance variable
     def set_age(self, age):
         self.age = age
 
 obj = Student("John")
 obj.set_age(20)
-
+#declaring instance variable outside the class using object reference variable
+obj.age=20  
 print(obj.name)  # Output: John
 print(obj.age)   # Output: 20   
 
@@ -22,5 +28,19 @@ print(obj2.age)   # Output: 24
 obj3 = Student("Sashi")
 obj3.set_age(20)
 
+
 print(obj3.name)  # Output: John
 print(obj3.age)   # Output: 20
+
+
+print(obj.__dict__)  # Output: {'name': 'John'}
+print(obj2.__dict__)  # Output: {'name': 'Ajay', 'age': 30}
+print(obj3.__dict__)  # Output: {'name': 'Sashi', 'age': 40}
+
+del obj.age  # Deleting instance variable age from obj
+del obj2.age  # Deleting instance variable age from obj2
+del obj3.age  # Deleting instance variable age from obj3
+
+print(obj.__dict__)  # Output: {'name': 'John'}
+print(obj2.__dict__)  # Output: {'name': 'Ajay', 'age': 30}
+print(obj3.__dict__)  # Output: {'name': 'Sashi', 'age': 40}

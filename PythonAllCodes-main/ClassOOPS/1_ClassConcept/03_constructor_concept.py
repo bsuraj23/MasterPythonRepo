@@ -1,12 +1,28 @@
 # Constructor Concept
+
+class NewClass:
+    def __init__(self):
+        print("i am getting executed")
+        self.a=90
+        self.b=78
+
+    
+    def add(self):
+        return self.a + self.b
+
+obj = NewClass()
+print(obj.add())
+
 class Student:
     a=90
     def __init__(self, name):
         self.name = name
         print("i am getting executed")
-        b=78
-    def add():
-        pass
+        self.b=78
+
+    
+    def add(self):
+        return self.a + self.b
 
 
 

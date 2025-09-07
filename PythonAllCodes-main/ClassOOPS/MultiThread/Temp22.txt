@@ -1,0 +1,25 @@
+Multithreeading concepts
+
+Get current thread name 
+Ways to create threads
+Creating thread without class
+Creating thread by extending thread class
+Creating thread by with out extending thread class ()example without thread and with multithread
+Setting and getting name of thread 
+Thread identification number ..active count 
+enumerate function 
+isAlive()
+Join()
+Deamon Threads  concept 
+Synchronization cencepts
+Synchronization concept by using lock
+Difference bew lock and Rlock
+Synchronization using semaphore
+Diff bew Lock and semaphore
+Interthread communication concept
+
+Interthread communication using event object
+Interthread communication using conditon object
+Interthread communication usingc Queue
+QUeue impo methods
+Types of Queue..FIFO ... Priority Q...
