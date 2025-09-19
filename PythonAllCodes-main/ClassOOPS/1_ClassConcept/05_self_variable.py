@@ -1,8 +1,8 @@
 # Self Variable
 class Student:
     i=90
-    def show(self):
-        print("self refers to:", self)
+    def show():
+        print("self refers to:")
      
 
 s = Student()

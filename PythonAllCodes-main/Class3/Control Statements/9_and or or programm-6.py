@@ -9,7 +9,7 @@ elif (a==90 and b==71):
 else:
     print("this is just else")
 
-if(a==901 or b==81):
+if(a==90 or b==8):
     print("a is 90 and b is 8")
 
 elif (a==901 or b==7):  

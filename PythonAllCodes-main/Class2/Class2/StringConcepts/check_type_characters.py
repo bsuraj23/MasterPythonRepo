@@ -1,5 +1,5 @@
-s = "Python123"
-print(s.isalpha())   # False
-print(s.isdigit())   # False
-print(s.isalnum())   # True
-print(" ".isspace()) # True
+name = "Sampath"
+print(name.isalpha())   # True
+print(name.isdigit())   # False
+print(name.isalnum())   # True
+print("".isspace()) # True

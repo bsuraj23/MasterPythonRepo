@@ -1,6 +1,6 @@
 set({1,2,3}) 
 a= frozenset([1,2,3,4])
-a.
+
 
 fs1 = frozenset([1, 2, 3, 4])
 print(fs1)

@@ -9,7 +9,7 @@ class MyClass:
     # Instance Method
     def instance_method(self):
         return f"Instance method called on {self}"
-
+   
     # Class Method
     @classmethod
     def class_method(cls):

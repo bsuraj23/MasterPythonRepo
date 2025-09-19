@@ -13,8 +13,9 @@ class NewClass:
 obj = NewClass()
 print(obj.add())
 
-class Student:
+class   :
     a=90
+    
     def __init__(self, name):
         self.name = name
         print("i am getting executed")
@@ -25,7 +26,7 @@ class Student:
         return self.a + self.b
 
 
-
+obj = Student()
 print(Student.a)
 Student.a=67
 Alice = Student("Alice")

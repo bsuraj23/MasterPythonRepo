@@ -1,6 +1,7 @@
 # # global Keyword
 a=10 
 def f1():
+    a=90
     print("value of a inside f1",a)
 f1()
 print("value of a outside f1",a)
@@ -42,7 +43,8 @@ print(x)
 
 
 
-def function():
+def sample():
+    
     
     def add():
         print("nnested function")

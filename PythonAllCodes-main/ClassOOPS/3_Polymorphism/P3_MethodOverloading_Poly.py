@@ -3,14 +3,9 @@
 #thus we can not achieve method overloading in python like other languages  Java or C++
 #but we can achieve method overloading using default arguments or *args or **kwargs 
 class MathOperations:
-    def add(self, a, b):
-        return a + b
-
-    def add(self, a, b, c):
-        return a + b + c
-
-    def add(self, a, b, c, d):
-        return a + b + c + d
+   
+    def add(self, a, b, c, d, e):
+        return a + b + c + d + e
 
 math_ops = MathOperations()
 # print(math_ops.add(5, 10))          # Calls the first add method

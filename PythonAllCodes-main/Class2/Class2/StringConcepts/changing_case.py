@@ -1,6 +1,10 @@
-s = "Python Programming"
-print(s.upper())   # PYTHON PROGRAMMING
-print(s.lower())   # python programming
-print(s.title())   # Python Programming
-print(s.swapcase())# pYTHON pROGRAMMING
+str = "Python Programming"
+print(str.upper())   # PYTHON PROGRAMMING
+print(str.lower())   # python programming
+print(str.title())   # Python Programming
+print(str.swapcase())# pYTHON pROGRAMMING
 #TODO:
+
+import math
+print(math.ceil(4.2))  # 5
+print(math.floor(4.7)) # 4

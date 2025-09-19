@@ -1,5 +1,5 @@
-x = int(input("Please enter an integer: "))
-print(type(x))
+# x = int(input("Please enter an integer: "))
+# print(type(x))
 
 
 # if x < 0:
@@ -13,15 +13,14 @@ print(type(x))
 #      print('More')
 
 
-a=90
-if(a==90):
-    print("dfgdsghfsdghf")
+# a=90
+# if(a==90):
+#     print("A is equal to 90")
     
 
 
-
-citizen="indidhdvfvan"
-age=18
+citizen="indian"
+age=15
 if(citizen=="indian"):
     
     if(age>=18):

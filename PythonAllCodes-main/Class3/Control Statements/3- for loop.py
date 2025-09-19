@@ -6,8 +6,8 @@
 
  # Measure some strings:
 names  = ['mohan', 'sunil', 'uday','ttttt']
-for temp in names:
-     print(temp)
+for x in names:
+     print(x)
 
 #cat 3
 #window 6
@@ -17,7 +17,7 @@ for temp in names:
 
 #range([start], stop[, step])
 1,2,3,4,5,6,7,8,9
-for i in range(1,10,2):
+for i in range(1,9):
     print(i)
 
 #loop with else block  

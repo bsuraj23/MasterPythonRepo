@@ -6,12 +6,23 @@
 class Student:
     def __init__(self, name):
         self.name = name
+    #getter method
+    def get_name(self):
+        return self.name
     # instance method example of declaring instance variable
     def set_age(self, age):
         self.age = age
 
 obj = Student("John")
+print(obj.get_name())  # Output: John
 obj.set_age(20)
+
+Obj2 = Student("mohan")
+print(Obj2.get_name())  # Output: mohan
+Obj2.set_age(30)
+
+
+
 #declaring instance variable outside the class using object reference variable
 obj.age=20  
 print(obj.name)  # Output: John

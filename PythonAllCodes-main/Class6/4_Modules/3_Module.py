@@ -33,4 +33,3 @@ print(mm.__spec__)      # Output: ModuleSpec(name='my_math_module', loader=<_fro
 # These properties provide information about the module and its loading mechanism
 # You can use these properties for debugging and introspection purposes
 # End of the module internal properties demonstration code
-

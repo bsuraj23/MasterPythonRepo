@@ -10,3 +10,6 @@ print(dq)            # deque([2, 1])
 # Remove elements
 dq.pop()             # Removes from right (1)
 dq.popleft()         # Removes from left (2)
+
+dq.clear()          # Removes all elements
+print(dq)            # deque([])

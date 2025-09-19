@@ -1,5 +1,6 @@
 print("Start of program")
-name=input("Please enter your name  ")
+a=int(input("Please enter your name  "))
 print(name)
 print("End of program")
 
+        

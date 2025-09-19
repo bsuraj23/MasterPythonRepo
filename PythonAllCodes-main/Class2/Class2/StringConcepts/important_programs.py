@@ -2,7 +2,7 @@
 s = "Python"
 print(s[::-1])  # nohtyP
 
-# Palindrome check
+# Palindrome check  
 word = "madam"
 print(word == word[::-1])  # True
 

@@ -17,6 +17,22 @@ obj1.func1() #calling class A function
 obj1.func2() #calling class B function  
 #obj1.func3() #this will give error as class B object cannot access class C function
 
+class Sample:
+    def func():
+        print("This is function from Sample class")
+
+class Test():
+    gobj = Sample()
+    gobj.func()
+
+
+
+obj = Sample()
+obj1 = Test()
+print(type(obj))
+
+
+
 #Has a relationship
 class D:
     def func4(self):
@@ -31,3 +47,6 @@ class F:
         self.e = E()  #F has a relationship with E
     def func6(self):
         print("This is function 6 from class F")
+        d.func4() #calling class D function
+        e.func5() #calling class E function
+obj = F()

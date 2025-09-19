@@ -2,17 +2,22 @@
 
 class Demo:
     def __init__(self):
-        self.public = "Public"
-        self._protected = "Protected"
-        self.__private = "Private"
+        __a=90
+        self.public = "park"
+        self._protected = "cake"
+        self.__private = "phone"
     def show(self):
         print(self.public, self._protected, self.__private)
+        
+    def display(self):
+        print(self.__private)
 d = Demo()
 d.show()
-print(d.public)
-print(d._protected)
+# print(d.__a) # Error
+print("public var is ",d.public)
+print("Protected var is ",d._protected)
 # print(d.__private) # Error
-print(d._Demo__private) # Access private
+print("Private var is ",    d._Demo__private) # Access private
 # Name mangling to access private member
 # Private members are not accessible directly outside the class but can be accessed using name mangling.
 # Protected members are accessible within the class and its subclasses but should be treated as non-public.

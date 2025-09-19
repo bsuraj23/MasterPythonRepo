@@ -3,7 +3,7 @@ import time
 
 # Define a function to run in a thread
 def print_numbers():
-    for i in range(3):
+    for i in range(5):
         print(f"[{threading.current_thread().name}] Number: {i}")
         time.sleep(1)
 

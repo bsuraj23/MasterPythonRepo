@@ -10,4 +10,13 @@ q.put(20)
 print(q.get())  # 10
 print(q.get())  # 20
 
+print(dir(q))
+print(q.queue)
+print(q.empty())
+print(q.full())
+print(q.qsize())    
+
+
+
+
 

@@ -7,14 +7,20 @@
 class Animal:
     def __init__(self, name):
         self.name = name
-         print("Animal constructor called")  
-    def __init__(self, name):
-        self.name = name
-         print("Animal constructor called")  
+        print("Animal constructor one para called")  
+     
     def __init__(self, name, age):
         self.name = name
-         print("Animal constructor called")  
+        self.age = age
+        print("Animal constructor two para  called")  
+
     def __init__(self, name, age, species):
         self.name = name
-         print("Animal constructor called")  
-   
+        self.age = age
+        self.species = species
+        print("Animal constructor 3 para called")  
+
+# obj1 = Animal("Buddy")         # This will raise an error
+obj2 = Animal("Buddy", 3)            # This will raise an error
+obj3 = Animal("Buddy", 3, "Dog")     # This will work
+print(f"Name: {obj3.name}, Age: {obj3.age}, Species: {obj3.species}")
