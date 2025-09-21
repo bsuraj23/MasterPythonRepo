@@ -37,7 +37,7 @@ class Z(X):
         print("Function from class Z")
 
 class W(Y, Z):
-    pass
+    pass    
 
 # Create object of W and call func
 obj_w = W()
