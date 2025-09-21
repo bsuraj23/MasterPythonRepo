@@ -1,4 +1,4 @@
-#TODO
+
 #Dafult Argument 
 
 def repeat_line(a="default", b=2):
@@ -9,7 +9,7 @@ def repeat_line(a="default", b=2):
 
 
 repeat_line()
-#repaeat_line(2,"sometext")
+#repeat_line(2,"sometext")
 
 
 

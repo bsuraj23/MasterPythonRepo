@@ -27,9 +27,9 @@ check_locals()
 
 # add(10, 20)
 
-# # globals()
-# x = 100
-# print(globals()['x'])
+# globals()
+x = 100
+print(globals()['x'])
 
 # globals()['new_var'] = 'created'
 # print(new_var)

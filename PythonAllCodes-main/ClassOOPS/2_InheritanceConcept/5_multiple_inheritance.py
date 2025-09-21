@@ -22,4 +22,29 @@ obj2.func2() #calling class B function
 #obj2.func3() #this will give error as class B object cannot access class C function
 #obj3 = C()
 
-#TODO  add code for access  func  diamond problem
+
+# Diamond Problem Example
+class X:
+    def func(self):
+        print("Function from class X")
+
+class Y(X):
+    def func(self):
+        print("Function from class Y")
+
+class Z(X):
+    def func(self):
+        print("Function from class Z")
+
+class W(Y, Z):
+    pass
+
+# Create object of W and call func
+obj_w = W()
+obj_w.func()  # Shows MRO: Y -> Z -> X
+
+# Show MRO
+print("MRO for class W:", W.__mro__)
+
+
+

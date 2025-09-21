@@ -147,4 +147,37 @@ def timed_gen():
         yield i
 
 
-#TODO Add code for map filter etc 
+Add code for map filter etc 
+for value in timed_gen():
+    if value < 5:  # Limit output for demonstration
+        print(value)
+    else:
+        break
+@access_control_generator
+def secure_gen():
+    for i in range(5):
+        yield i * 10    
+for value in secure_gen(user="admin"):
+    print(value)    
+for value in secure_gen(user="guest"):
+    print(value)        
+@memoize_generator
+def fib_gen(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b 
+for value in fib_gen(10):
+    print(value)
+for value in fib_gen(10):  # This will use cached values
+    print(value)
+for value in controlled_generator():
+    print(value)
+gen = controlled_generator()
+print(next(gen))  # Output: Start
+print(next(gen))  # Output: Running
+print(gen.throw(Exception, "Something went wrong"))  # Handle exception
+print(next(gen))  # Output: Cleanup
+# print(next(gen))  # This will raise StopIteration
+# print(next(gen))  # This will raise StopIteration
+# print(next(gen))  # This will raise StopIteration

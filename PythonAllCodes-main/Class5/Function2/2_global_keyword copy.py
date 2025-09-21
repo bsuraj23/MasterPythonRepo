@@ -9,6 +9,20 @@ def f1():
 f1()
 print("value of a outside f1",a)    
 
-#TODO
+
 #add more complex examples
-#add example of nested function and accessing global variable inside nested function    
+#add example of nested function and accessing global variable inside nested function 
+# global keyword
+# using global keyword to modify global variable inside function
+count = 0   
+
+def f2():
+    global count
+    count += 1
+    print("value of count inside f2", count)
+
+f2()
+print("value of count outside f2", count)
+
+f2()
+print("value of count outside f2", count)

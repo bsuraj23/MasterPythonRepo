@@ -1,7 +1,24 @@
 #code for constructor  overloading polymorphism concept
 
 class MathOperations:
-   
+    def __init__(self, a, b):
+       self.a = a
+       self.b = b
+       self.c = 0
+       print("Two arguments constructor called")
+
+    
+    def __init__(self, a):
+       self.a = a
+       self.b = 0
+       self.c = 0
+       print("One argument constructor called")
+    def __init__(self):
+         self.a = 0
+         self.b = 0
+         self.c = 0
+         print("No arguments constructor called")
+
     def __init__(self, *args): #variable length arguments
        print("type of args:", type(args))
        print("Variable Length arguments constructor called")

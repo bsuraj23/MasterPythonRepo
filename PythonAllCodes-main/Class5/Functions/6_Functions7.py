@@ -8,6 +8,14 @@ def word_frequency(text):
 sentence = "Python is fun and Python is easy"
 print(word_frequency(sentence))
 
-#TODO
+
 
 #variable length args
+def multiply(*args):
+    result = 1
+    for num in args:
+        result *= num
+    return result   
+print(multiply(1, 2, 3))        # Output: 6
+print(multiply(4, 5))           # Output: 20
+
