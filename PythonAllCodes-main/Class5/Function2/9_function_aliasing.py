@@ -13,7 +13,7 @@ call_function(hello)
 #using alias to store function in data structures
 func_list = [greet, hello]
 for f in func_list:
-    f() 
+    f()   
 #using alias to return function from another function
 def get_greet_function():
     return greet    
@@ -22,15 +22,3 @@ g()
 greet_alias = g
 greet_alias()()
 
-#decorators using function aliasing
-import time
-from functools import wraps
-def timing_decorator(func):
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time()
-        print(f"{func.__name__} took {end - start:.4f} seconds")
-        return result
-    return wrapper
