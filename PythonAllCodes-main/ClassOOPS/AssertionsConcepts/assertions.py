@@ -1,6 +1,6 @@
 # Assertions
-x = 5
-assert x > 0, "x should be positive"
+age  = 9
+assert age >= 18, "age should be greater than 18 for voter id msg here "
 
 
 #add more example code below
