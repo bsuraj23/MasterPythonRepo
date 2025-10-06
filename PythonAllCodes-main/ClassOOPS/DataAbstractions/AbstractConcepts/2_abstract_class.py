@@ -20,6 +20,9 @@ class Vehicle2(ABC):
     def start_engine(self):
         pass
 
+
+
+
 # obj2 = Vehicle2()  # This will raise an error because we cannot instantiate an abstract class with abstract methods
 #as extended to ABC class
 #Java we can create abstract class without abstract method
@@ -36,7 +39,7 @@ class ThirdCar(Vehicle2):
     def start_engine(self):
         return "ThirdCar engine started"
   
-car = Car()
-print(car.start_engine())  # Output: Car engine started
+car = ThirdCar()
+print(car.start_engine())  # Output: ThirdCar engine started
 # If we comment the start_engine method in Car class then it will give error as we cannot create object of abstract class
 # TypeError: Can't instantiate abstract class Car with abstract method start_engine

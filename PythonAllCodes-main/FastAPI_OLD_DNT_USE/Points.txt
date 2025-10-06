@@ -1,0 +1,193 @@
+Fast API 
+
+
+
+Defining routes using
+@app.get(), @app.post(), @app.put(), @app.delete() 624
+
+
+Path parameters and type validation 625
+
+
+Query parameters and defaults 626
+
+
+Request bodies with Pydantic models 627
+
+
+Handling form data and file uploads 628
+
+
+Response models for structured API responses 629
+
+
+Dependency Injection in FastAPI 630
+
+
+What are dependencies? 631
+
+
+Creating and using dependencies 632
+
+
+Common use cases: database sessions, authentication, logging 633
+
+
+Using
+Depends() for cleaner code 634
+
+
+Data Handling with Pydantic 635
+
+
+Introduction to Pydantic models 636
+
+
+Field validation and constraints (min_length, max_length, regex) 637
+
+
+Nested models and custom validation 638
+
+
+Data serialization and response customization 639
+
+
+Enforcing data types and handling missing fields 640
+
+
+Database Integration 641
+
+
+Introduction to SQLAlchemy 642
+
+
+Setting up an async database with Databases library 643
+
+
+Connecting FastAPI to PostgreSQL/MySQL 644
+
+
+Creating tables and defining ORM models 645
+
+
+CRUD operations (Create, Read, Update, Delete) 646
+
+
+Using Alembic for database migrations 647
+
+
+Authentication & Authorization 648
+
+
+Introduction to authentication in FastAPI 649
+
+
+Using OAuth2 with password flow 650
+
+
+Implementing JWT authentication (
+fastapi.security) 651
+
+
+Protecting routes with
+Depends() 652
+
+
+Role-based access control (RBAC) 653
+
+
+API key authentication 654
+
+
+Background Tasks & WebSockets 655
+
+
+Running background tasks with
+BackgroundTasks 656
+
+
+Sending emails or processing data asynchronously 657
+
+
+WebSockets for real-time communication 658
+
+
+Building a simple chat application 659
+
+
+Middleware, CORS, and Security 660
+
+
+What is middleware in FastAPI? 661
+
+
+Logging and request processing with middleware 662
+
+
+Handling CORS (
+CORSMiddleware) 663
+
+
+Security best practices: HTTPS, headers, rate limiting 664
+
+
+Protecting against SQL injection and CSRF attacks 665
+
+
+Testing FastAPI Applications 666
+
+
+Why testing is important 667
+
+
+Writing unit tests with
+pytest 668
+
+
+Testing API endpoints with
+TestClient 669
+
+
+Using dependency overrides for mock testing 670
+
+
+Load testing with
+locust 671
+
+
+Deploying FastAPI Applications 672
+
+
+Deployment strategies: Docker, AWS, DigitalOcean, etc. 673
+
+
+Using Gunicorn and Uvicorn for production 674
+
+
+Setting up Nginx as a reverse proxy 675
+
+
+CI/CD pipelines for FastAPI (GitHub Actions, GitLab CI) 676
+
+
+Scaling FastAPI with Kubernetes 677
+
+
+Advanced Topics 678
+
+
+GraphQL with FastAPI (
+strawberry-graphql) 679
+
+
+Asynchronous task queues with Celery and Redis 680
+
+
+Streaming responses with
+StreamingResponse 681
+
+
+Handling large file uploads efficiently 682
+
+
+Using FastAPI with event-driven architecture (Kafka, RabbitMQ) 683

@@ -12,7 +12,7 @@ def rlock_example():
 threading.Thread(target=rlock_example).start()
 
 threading.Thread(target=rlock_example).start()
-
+rlock.release()
 
 #Add more examples
 # Example of RLock in a recursive function

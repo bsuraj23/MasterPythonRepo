@@ -6,4 +6,7 @@ class Example:
         self.__private_method()
 
 obj = Example()
+ # This will raise an AttributeError
 obj.call_private()
+
+#TODO   check from all angles java way ..other module access check etc

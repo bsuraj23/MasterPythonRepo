@@ -2,12 +2,21 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/xyz")
+@app.get("/")
 def read_root():
-    return {"message": "Welcomedffsfdsfesf to FastAPI! Server is respoding successfully."}
+    return {"message": "Welcome to FastAPI! today is Thursday  Server is responding successfully."}
+    
 
 
 
-@app.get("/23docs")
-def get_docs():
-    return {"docs_url": "http://127.0.0.1:8000/docs"}
+@app.get("/name")
+def get_name():
+    return "Hansraj - FastAPI Developer"
+
+
+
+#docs
+@app.get("/docs")
+def get_documentation():
+    return "http://localhost:8000/docs"
+    

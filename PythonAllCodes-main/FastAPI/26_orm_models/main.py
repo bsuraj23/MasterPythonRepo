@@ -24,3 +24,6 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {"message": "ORM models and table creation demo"}
+
+
+    #Homework: Implement CRUD operations for the Product model and test them using an SQLite database.

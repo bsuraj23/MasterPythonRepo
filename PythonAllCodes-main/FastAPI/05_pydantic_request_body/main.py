@@ -14,7 +14,8 @@ class Item(BaseModel):
 items_db = {}
 
 
-class Student(BaseModel):
+
+class Student():
     name: str
     age: int
     grade: str
@@ -23,8 +24,10 @@ class Student(BaseModel):
 def get_all_students():
     return [{"name": "Dheeraj23", "age": 20, "grade": "A++"}, {"name": "Sashi", "age": 22, "grade": "B++"}]   
 
-
-
+#Homework to add post method to add student and simulate without pydantic class
+# @app.post()
+# def func(item: Student):
+#     return StudentOBJ
 
 
 @app.get("/items/")
@@ -47,3 +50,9 @@ def get_item(name: str):
 def update_item(name: str, item: Item):
     items_db[name] = item
     return item
+
+#Homework Add delete method for items
+
+#Homework add docs for all methods
+
+#Homework  add pytdantic for student class and add post method to add student to list and get method to get all students

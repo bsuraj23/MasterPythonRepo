@@ -16,3 +16,5 @@ async def websocket_endpoint(websocket: WebSocket):
     while True:
         data = await websocket.receive_text()
         await websocket.send_text(f"Message received: {data}")
+
+#Homework: Implement a chat application using WebSockets where multiple clients can send and receive messages in real-time.

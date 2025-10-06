@@ -4,7 +4,8 @@ app = FastAPI()
 
 @app.get("/users/{user_id}")
 def read_user(user_id: int):
-    return {"user_id": user_id}
+    return {"user_id": user_id,
+            "user_name": "xyz"}
 
 @app.get("/products/{product_id}")
 def read_product(product_id: str):
@@ -20,6 +21,3 @@ def read_all_users():
     ]
     return {"users": users}
 
-@app.get("/docs")
-def get_docs():
-    return {"docs_url": "http://127.0.0.1:8000/docs"}

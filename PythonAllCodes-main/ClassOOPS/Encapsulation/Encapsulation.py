@@ -2,9 +2,13 @@
 class Car:
     def __init__(self,name):
         self.color = "Red"
-object 1 = Car()
-object2 = Car()
-object3 = Car()
+object1 = Car("Object1")
+object2 = Car("Object2")
+object3 = Car("Object3")
+obj = Car("MyCar")
+print(obj.color)  # Accessing public variable     
+
+
 
 print(object1.color)  # Accessing public variable
 print(object2.color)  # Accessing public variable
@@ -12,13 +16,21 @@ print(object3.color)  # Accessing public variable
 a=90
 
 class Sample:
+    _singlescore = 100  # Protected variable
     __private_var = 42  # Private variable
- 
-    def add():
+    def helper(self):
+        return self.__private_var
+    def add(self):
         print(a)  # 90
         a=67
         return Sample.__private_var + 10
-print(Sample.add())  # Accessing private variable through a public method
+obj1 = Sample()
+print(obj1.add())  # Accessing private variable through a public method
+print(obj1.helper())
+#mangling example
+print(Sample._Sample__private_var)  # Accessing private variable using name mangling
+
+
 #print(Sample.__private_var)  # This will raise an AttributeError
   
 print(a)
@@ -30,15 +42,15 @@ class Sample2:
 # Example 2: Private Variable
 class Bank:
     def __init__(self):
-        self.balance = 1000
+        self.__balance = 1000
 
     def show_balance(self):
         print(self.__balance)
-        return __balance
+        return self.__balance
 
 
 obj = Bank()
-print(obj.balance)
+# print(obj.balance)
 # Example 3: Protected Variable
 class Employee:
     def __init__(self):

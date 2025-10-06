@@ -4,14 +4,14 @@ from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 # In-memory store for items
-items = {}
+items = {} # Dictionary to hold items with integer keys
 
-@app.get("/items")
+@app.get("/items")  #decorator
 def get_items():
     return items
 
 @app.post("/items")
-def create_item(item: dict):
+def create_item(item_id: int,item: dict):
     # Add item with next available integer key
     item_id = max(items.keys(), default=0) + 1
     items[item_id] = item
@@ -31,8 +31,4 @@ def delete_item(item_id: int):
     if item_id in items:
         del items[item_id]
         return {"deleted": item_id}
-    raise HTTPException(status_code=404, detail="Item not found")
-
-@app.get("/docs")
-def get_docs():
-    return {"docs_url": "http://127.0.0.1:8000/docs"}
+    raise HTTPException(status_code=404, detail="Item not found .....")

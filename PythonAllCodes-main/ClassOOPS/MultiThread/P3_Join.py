@@ -13,3 +13,17 @@ my_thread.start()
 # Wait until the thread is done
 my_thread.join()
 print("Main program waited until thread finished.")
+
+#TODO target mak it example for class ...
+class MyThread(threading.Thread):
+    def run(self):
+        print("Thread started working...")
+        time.sleep(2)
+        print("Thread finished!")
+
+# Create and start the thread
+obj = MyThread()
+obj.start()
+
+# Wait until the thread is done
+obj.join()

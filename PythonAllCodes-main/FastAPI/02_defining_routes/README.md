@@ -12,3 +12,4 @@ Demonstrates GET, POST, PUT, DELETE routes in FastAPI.
    uvicorn main:app --reload
    ```
 3. Try endpoints in browser or with curl/Postman.
+d

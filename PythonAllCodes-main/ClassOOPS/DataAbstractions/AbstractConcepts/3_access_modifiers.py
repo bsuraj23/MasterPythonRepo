@@ -51,7 +51,7 @@ for creature in [Dog(), Cat(), Human()]:
 # Protected members are accessible within the class and its subclasses but should be treated as non-public.
 # Public members are accessible from anywhere.  
 # In Python, these are just conventions and do not enforce access restrictions like in some other languages.
-#mangling code example
+#mangling code example  
 class Test:
     def __init__(self):
         self.__private_var = 42  # Private variable
@@ -66,7 +66,7 @@ print(t._Test__private_var)  # Accessing the private variable using name manglin
 # It is done by prefixing the variable name with _ClassName.
 
 #TODO mangling code example
---- IGNORE ---
+
 class Example:
     def __init__(self):
         self.__hidden = "hidden value"

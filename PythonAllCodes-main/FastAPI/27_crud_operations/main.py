@@ -6,8 +6,8 @@ from pydantic import BaseModel
 
 DATABASE_URL = "sqlite:///./crud_demo.db"
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+engine23 = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(bind=engine23, autoflush=False, autocommit=False)
 Base = declarative_base()
 
 class Product(Base):
@@ -16,7 +16,7 @@ class Product(Base):
     name = Column(String, index=True)
     description = Column(String, index=True)
 
-Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine23)
 
 class ProductCreate(BaseModel):
     name: str
@@ -34,6 +34,18 @@ def get_db():
     finally:
         db.close()
 
+
+@app.get("/products/", response_model=list[ProductRead])
+def read_products(db: Session = Depends(get_db)):
+    return db.query(Product).all()
+
+
+
+
+
+
+
+
 @app.post("/products/", response_model=ProductRead)
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     db_product = Product(name=product.name, description=product.description)
@@ -42,9 +54,7 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     db.refresh(db_product)
     return db_product
 
-@app.get("/products/", response_model=list[ProductRead])
-def read_products(db: Session = Depends(get_db)):
-    return db.query(Product).all()
+
 
 @app.get("/products/{product_id}", response_model=ProductRead)
 def read_product(product_id: int, db: Session = Depends(get_db)):

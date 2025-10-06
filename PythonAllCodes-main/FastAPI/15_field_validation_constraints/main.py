@@ -11,3 +11,9 @@ app = FastAPI()
 @app.post("/products/")
 def create_product(product: Product):
     return product
+
+    #get 
+    #get Al Products 
+
+
+#TODO Make more exmaple projects fastapi on other models 

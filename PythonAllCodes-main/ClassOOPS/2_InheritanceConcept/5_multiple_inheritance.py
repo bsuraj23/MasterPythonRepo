@@ -17,7 +17,7 @@ obj1.func1() #calling class A function
 #obj1.func2() #this will give error as class A object cannot access class B function
 #obj1.func3() #this will give error as class A object cannot access class C function
 obj2 = B()  
-obj2.func2() #calling class B function
+# obj2.func2() #calling class B function
 #obj2.func1() #this will give error as class B object cannot access class A function
 #obj2.func3() #this will give error as class B object cannot access class C function
 #obj3 = C()
@@ -33,18 +33,26 @@ class Y(X):
         print("Function from class Y")
 
 class Z(X):
-    def func(self):
-        print("Function from class Z")
+    # def func(self):
+    #     print("Function from class Z")
 
-class W(Y, Z):
+class W(Z,Y):
     pass    
 
-# Create object of W and call func
+
+# Create object of W and call func 
 obj_w = W()
 obj_w.func()  # Shows MRO: Y -> Z -> X
 
+
+
 # Show MRO
-print("MRO for class W:", W.__mro__)
+print("MRO for class W: ", W.__mro__)
+obj_w.func()  # Output: Function from class Y
+# MRO: Method Resolution Order
+# In case of multiple inheritance, Python follows the C3 linearization algorithm to determine the method
+# resolution order. You can view the MRO of a class using the __mro__ attribute or the mro() method.
+# In the diamond problem example, the MRO for class W is W -> Y -> Z
 
 
 

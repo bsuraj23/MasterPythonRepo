@@ -12,7 +12,7 @@ class Item(BaseModel):
     price: float = 0.0
 
 
-
+#get api fpr products 
 
 @app.get("/search/")
 def search_items(q: str = None, limit: int = 10):
@@ -37,6 +37,4 @@ def update_item(item_id: int, item: Item):
     items[item_id] = item
     return {"updated": {"item_id": item_id, **item.dict()}}
 
-@app.get("/docs")
-def get_docs():
-    return {"docs_url": "http://127.0.0.1:8000/docs"}
+#HomeWork add docs code 

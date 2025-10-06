@@ -20,3 +20,9 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {"message": "Alembic migrations demo"}
+
+    #Homework: Create Alembic migration scripts to manage database schema changes and versioning.
+    # Use Alembic commands to generate and apply migrations.
+    # Test the migration process by adding new models and fields, then generating and applying the corresponding migration scripts.
+    # Document the migration steps and any challenges faced during the process.
+    

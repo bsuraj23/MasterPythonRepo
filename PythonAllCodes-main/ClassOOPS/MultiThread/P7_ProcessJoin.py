@@ -11,4 +11,6 @@ process.start()
 
 process.join()
 print("Main program waited for process to finish.")
-process.kill()
+
+
+#TODO check why bug 

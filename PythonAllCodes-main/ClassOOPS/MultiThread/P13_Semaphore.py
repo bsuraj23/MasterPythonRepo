@@ -7,6 +7,11 @@ Semaphore is a synchronization primitive that is used to control access to a sha
 
 
 
+#TODO callable runnable  compare with Java and how its in python 
+
+#code below
+ 
+ 
 
 
 

@@ -21,3 +21,5 @@ async def log_requests(request: Request, call_next):
 @app.get("/")
 def read_root():
     return {"message": "Hello, FastAPI with CORS and Middleware!"}
+
+    #Homework: Add security headers and rate limiting middleware to enhance API security.

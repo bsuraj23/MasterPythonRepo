@@ -40,3 +40,5 @@ def read22222_users():
     users = db.query(User).all()
     db.close()
     return [{"id": u.id, "name": u.name, "email": u.email} for u in users]
+
+#Homework: Add error handling for duplicate emails and database connection issues.

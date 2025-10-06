@@ -56,3 +56,5 @@ def read_item(item_id: int, db: Session = Depends(get_db)):
 @app.get("/items/", response_model=list[ItemRead])
 def read_items(db: Session = Depends(get_db)):
     return db.query(Item).all()
+
+    #Homework: Extend the integration to support update and delete operations for items.

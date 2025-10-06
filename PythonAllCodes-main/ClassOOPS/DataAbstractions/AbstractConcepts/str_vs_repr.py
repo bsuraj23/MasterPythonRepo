@@ -12,3 +12,18 @@ class Demo:
 d = Demo()
 print(str(d))
 print(repr(d))
+
+
+#Add more exmpale where str and repr differ
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __str__(self):
+        return f"{self.name}, {self.age} years old"
+    def __repr__(self):
+        return f"Person(name='{self.name}', age={self.age})"
+
+p = Person("Alice", 30)
+print(str(p))  # Output: Alice, 30 years old (user-friendly)
+print(repr(p))  # Output: Person(name='Alice', age=30) (developer-friendly)
