@@ -10,6 +10,6 @@ def example_for_depends():
 app = FastAPI()
 
 @app.get("/secure/")
-def secure_route(token: str = Depends(example_for_depends)):
+def secure_route_xyz(token: str = Depends(example_for_depends)):
     result = get_token()
     return { "token": result }

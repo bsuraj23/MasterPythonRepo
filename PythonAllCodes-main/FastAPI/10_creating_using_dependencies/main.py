@@ -12,7 +12,7 @@ app = FastAPI()
 
 
 @app.get("/items/")
-def read_items(query: str = Depends(xyz)):
+def read_items(query: str = Depends(get_query)):
     return {"query": query}
 
 
