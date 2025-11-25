@@ -6,3 +6,5 @@ elif(a<=12):
     print("not greater")
 elif(a!=12):
     print("not greater")
+else:
+    print("I am else ")

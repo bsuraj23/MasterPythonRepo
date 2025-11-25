@@ -1,0 +1,16 @@
+{% extends "templates_demo/base.html" %}
+
+{% block content %}
+  <h2>Filters demo</h2>
+  <p>Original: '{{ text }}'</p>
+  <p>Trimmed: '{{ text|trim }}'</p>
+  <p>Upper: '{{ text|upper }}'</p>
+  <p>Length: {{ text|length }}</p>
+
+  <h3>Loop example</h3>
+  <ul>
+    {% for i in items %}
+      <li>Index {{ forloop.counter0 }}: {{ i }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

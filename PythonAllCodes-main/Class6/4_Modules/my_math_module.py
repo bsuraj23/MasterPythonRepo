@@ -1,5 +1,10 @@
 #generate code to demo modules in python
 # Custom Module
+
+"""this is like a calulator module providing basic math operations"""
+
+
+
 def add(a, b):
     return a + b
 

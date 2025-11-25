@@ -2,12 +2,16 @@
 
 # Example usage:  Next file will demonstrate usage as below 
 import my_math_module as mm
-print(mm.add(5, 3))  # Output: 8
+import re as rahon 
+# print(my_math_module.add(5, 3))  # Output: 8
 print(mm.subtract(5, 3))  # Output: 2
 print(mm.multiply(5, 3))  # Output: 15
 print(mm.divide(5, 0))  # Output: Division by zero is not allowed
 print(mm.power(2, 3))  # Output: 8
 print(mm.modulus(5, 3))  # Output: 2
+
+
+
 
 
 # You can also use from...import statement
@@ -18,7 +22,7 @@ print(subtract(5, 3))  # Output: 2
 import my_math_module as mm
 print(mm.multiply(5, 3))  # Output: 15
 print(mm.divide(5, 0))  # Output: Division by zero is not allowed
-
+print("printing all things which are there in my math module ",dir(mm))
 
 # Using dir() function to list all functions in the module
 # import my_math_module as mm
@@ -31,7 +35,7 @@ if __name__ == "__main__":
     # You can add code here to test the functions in the module
     print("Testing add function: ", add(5, 3))  # Output: 8
     print("Testing subtract function: ", subtract(5, 3))  # Output: 2
-    print("Testing multiply function: ", multiply(5, 3))  # Output: 15
+    # print("Testing multiply function: ", multiply(5, 3))  # Output: 15
     print("Testing divide function: ", divide(5, 0))  # Output: Division by zero is not allowed
     print("Testing power function: ", power(2, 3))  # Output: 8
     print("Testing modulus function: ", modulus(5, 3))  # Output: 2

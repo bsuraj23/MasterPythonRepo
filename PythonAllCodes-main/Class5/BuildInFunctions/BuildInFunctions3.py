@@ -12,7 +12,6 @@ print(temp)
 
 
 
-
 def check_locals():
     a = 5
     b = "text"

@@ -10,7 +10,9 @@ app = FastAPI()
 
 @app.post("/users/")
 def create_user(user: User):
-    return user
+    if not user.name or user.age < 0:
+        return {"error": "Invalid user data. Please provide valid name and positive age."}
+    return {"message": "User created successfully", "user": user}
 
 
 @app.get("/")

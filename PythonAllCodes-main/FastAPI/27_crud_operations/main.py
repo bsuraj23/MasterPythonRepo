@@ -6,26 +6,22 @@ from pydantic import BaseModel
 
 DATABASE_URL = "sqlite:///./crud_demo.db"
 
-engine23 = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(bind=engine23, autoflush=False, autocommit=False)
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 Base = declarative_base()
-
+Base.metadata.create_all(bind=engine)
 class Product(Base):
-    __tablename__ = "products"
+    __tablename__ = "Products"
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     description = Column(String, index=True)
-
-Base.metadata.create_all(bind=engine23)
-
-class ProductCreate(BaseModel):
-    name: str
-    description: str
-
 class ProductRead(ProductCreate):
     id: int
 
-app = FastAPI()
+    class ProductCreate(BaseModel):
+    name: str
+    description: str
+
 
 def get_db():
     db = SessionLocal()
@@ -33,21 +29,15 @@ def get_db():
         yield db
     finally:
         db.close()
-
-
 @app.get("/products/", response_model=list[ProductRead])
 def read_products(db: Session = Depends(get_db)):
+    db.query("Select * from Products ")
     return db.query(Product).all()
-
-
-
-
-
-
 
 
 @app.post("/products/", response_model=ProductRead)
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
+ 
     db_product = Product(name=product.name, description=product.description)
     db.add(db_product)
     db.commit()
@@ -56,12 +46,9 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
 
 
 
-@app.get("/products/{product_id}", response_model=ProductRead)
-def read_product(product_id: int, db: Session = Depends(get_db)):
-    db_product = db.query(Product).filter(Product.id == product_id).first()
-    if not db_product:
-        raise HTTPException(status_code=404, detail="Product not found")
-    return db_product
+
+
+
 
 @app.put("/products/{product_id}", response_model=ProductRead)
 def update_product(product_id: int, product: ProductCreate, db: Session = Depends(get_db)):
@@ -73,6 +60,38 @@ def update_product(product_id: int, product: ProductCreate, db: Session = Depend
     db.commit()
     db.refresh(db_product)
     return db_product
+
+
+
+
+
+app = FastAPI()
+
+
+
+@app.get("/products/", response_model=list[ProductRead])
+def read_products(db: Session = Depends(get_db)):
+    return db.query(Product).all()
+   
+
+
+
+
+
+
+
+
+
+
+
+@app.get("/products/{product_id}", response_model=ProductRead)
+def read_product(product_id: int, db: Session = Depends(get_db)):
+    db_product = db.query(Product).filter(Product.id == product_id).first()
+    if not db_product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    return db_product
+
+
 
 @app.delete("/products/{product_id}")
 def delete_product(product_id: int, db: Session = Depends(get_db)):

@@ -1,11 +1,12 @@
 s1 = set()
 s2 = {1, 2}
-s3 = set([3, 4])
+s3 = set([3, 4])  # reason ...
 s4 = set(range(5))
 
 fruits_list = ["apple", "banana", "cherry", "apple"]
 fruits_set = set(fruits_list)
 s5 = set(fruits_set)
+
 
 ##add examples more for iteratble and String values to be ingested in set               
 s6 = set("hello")

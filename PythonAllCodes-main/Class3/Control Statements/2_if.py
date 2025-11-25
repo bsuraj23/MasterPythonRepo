@@ -20,7 +20,7 @@
 
 
 citizen="indian"
-age=15
+age=19
 if(citizen=="indian"):
     
     if(age>=18):

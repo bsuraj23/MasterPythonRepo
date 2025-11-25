@@ -1,19 +1,20 @@
-import re   
-# print(re.match(r'\d+', '7abc'))   
-# # print("\n")
-# print(re.match(r'\w+', 'Hello123'))
-# print("ajhdfgashdfs\tadfagdfgusf")
+import re 
 
-# print(re.match(r'[A-Z]\w+', 'Python3ajshjdsgasgdasudfgdhsss'))
-# print(re.match(r'[a-z]+', 'abcXYZ'))
+print(re.match(r'\d+', 'abc'))   
+# print("\n")
+print(re.match(r'\w+', 'Hello123'))
 
 
+print(re.match(r'[A-Z]', 'Python3ajshjdsgasgdasudfgdhsss'))
+print(re.match(r'[a-z]+', 'XYZabc'))
 
 
-print(re.match(r'abc', 'abcde'))
+
+
+print(re.match(r'abcd', 'abcde'))
 #explain this code  in one line
-
-print(re.match(r'^\d+', '123abc'))
+print("line 16")
+print(re.match(r'^\d+', '33abc'))
 
 
 
@@ -25,7 +26,6 @@ print(re.match(r'\d{2,4}', '1abc'))
 print(re.match(r'\d{2,4}', '12345abc'))
 
 
-# x
 
 
 

@@ -44,4 +44,4 @@ def square(num):
     result = math.sqrt(temp)
     return result 
 
-print(square("we"))
+print(square(36))

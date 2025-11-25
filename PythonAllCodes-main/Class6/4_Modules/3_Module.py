@@ -1,4 +1,6 @@
 #reloading module   
+
+""" this module 3 is demonstrating reloading of modules in python"""
 import importlib
 import my_math_module as mm
 importlib.reload(mm)
@@ -15,8 +17,8 @@ print("Modulus: ", mm.modulus(10, 3))       # Output: 1
 
 
 # Example of aliasing   
-import my_math_module as mm
-print(mm.add(10, 5))  # Output: 15
+import my_math_module as xyz
+print(xyz.add(10, 5))  # Output: 15
 
 #code to demo printing module docstring
 import my_math_module as mm
@@ -30,6 +32,8 @@ print(mm.__file__)      # Output: Path to the module file
 print(mm.__package__)   # Output: None (since it's a top-level module)
 print(mm.__loader__)    # Output: <_frozen_importlib_external.SourceFileLoader object at ...>
 print(mm.__spec__)      # Output: ModuleSpec(name='my_math_module', loader=<_frozen_importlib_external.SourceFileLoader object at ...>, origin='...')       
+print(mm.__doc__)    # Output: this is like a calulator module providing basic math operations
+
 # These properties provide information about the module and its loading mechanism
 # You can use these properties for debugging and introspection purposes
 # End of the module internal properties demonstration code

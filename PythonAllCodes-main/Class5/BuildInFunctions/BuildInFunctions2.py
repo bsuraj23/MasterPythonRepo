@@ -29,8 +29,8 @@ print(bin(5))
 print(bin(10))
 print(bin(255))
 print(bin(0))
-print(bin(1024))
-
+print(bin(1024))   
+apple =  97  
 # # ord()
 print(ord('A'))
 print(ord('a'))
@@ -48,7 +48,19 @@ b = 10
 sum = a + b
 print("The sum of", a, "and", b, "is", sum) 
 #code to find the maximum of two numbers
+
+
+a= print("Heloow ")
+print("return form print is",a)
+
 x = 15  
 y = 20
-maximum = max(x, y)
+maximum = max(34,67)
+
+
+def add(a, b):
+    return a + b
+
+result = add(1,2)
+print(result)
 

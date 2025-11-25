@@ -1,15 +1,8 @@
-print(len("Hellow Old"))
+print(len("Sampath123      12345"))
 # len()
 
 
-
-
-
-
 print(len("OpenAI "))
-
-
-
 
 print(len([1, 2, 3, 4]))
 

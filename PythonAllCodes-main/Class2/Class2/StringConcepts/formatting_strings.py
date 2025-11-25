@@ -1,9 +1,9 @@
-name = "Alice"
+name = "Rakesh"
 age = 30
-print("My name is {} and age is {}".format(name, age))
+print("My name is {} and age is {}".format( age,name))
 print(f"My name is {name} and age is {age}")
 
-#code for using int or float,decimal in format
+# code for using int or float,decimal in format
 height = 5.9
 print("My name is {} and age is {} and height is {}".format(name, age, height))
 print(f"My name is {name}, age is {age}, and height is {height}")
@@ -16,9 +16,9 @@ print("My name is {n}, age is {a}, and height is {h:.1f}".format(n=name, a=age, 
 
 
 
-#number formatting for signed numbers,decimals,floats etc
-num = 1234.56789
-print("Formatted number (default): {}".format(num))
-print("Formatted number (2 decimal places): {:.2f}".format(num))
-print("Formatted number (signed): {:+.2f}".format(num))
-print("Formatted number (with thousands separator): {:,.2f}".format(num))
+# #number formatting for signed numbers,decimals,floats etc
+# num = 1234.56789
+# print("Formatted number (default): {}".format(num))
+# print("Formatted number (2 decimal places): {:.2f}".format(num))
+# print("Formatted number (signed): {:+.2f}".format(num))
+# # print("Formatted number (with thousands separator): {:,.2f}".format(num))

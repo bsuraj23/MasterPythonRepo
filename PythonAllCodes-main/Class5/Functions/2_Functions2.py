@@ -30,10 +30,10 @@ def greet_user(name):
 greet_user("Alice")
 
 # Example 4
-def subtract(x, y):
+def subtract(x=7, y=3):
     return x - y
 
-print(subtract(9, 4))
+print(subtract())
 
 # Example 5
 def cube(num):
@@ -43,6 +43,8 @@ print(cube(3))
 
 # Example 6
 def multiply_numbers(a, b, c):
+   
     return a * b * c
 
+    
 print(multiply_numbers(2, 3, 4))

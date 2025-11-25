@@ -1,0 +1,15 @@
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+sqlalchemy>=2.0.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+
+# Database drivers (uncomment based on your database choice)
+# For PostgreSQL:
+psycopg2-binary>=2.9.0
+
+# For MySQL:
+pymysql>=1.1.0
+
+# For development and testing
+python-dotenv>=1.0.0

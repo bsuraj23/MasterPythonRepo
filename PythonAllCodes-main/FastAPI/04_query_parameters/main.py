@@ -6,10 +6,12 @@ app = FastAPI()
 # In-memory store for items
 items = {}
 
-class Item(BaseModel):
-    name: str
-    description: str = ""
-    price: float = 0.0
+
+
+@app.get("/")
+def xyz():
+    return 0
+
 
 
 #get api fpr products 
@@ -23,6 +25,13 @@ def search_items(q: str = None, limit: int = 10):
         if q is None or q.lower() in item.name.lower()
     ]
     return {"query": q, "limit": limit, "results": filtered[:limit]}
+
+    
+class Item(BaseModel):
+    name: str
+    description: str = ""
+    price: float = 0.0
+
 
 @app.post("/search/")
 def create_item(item: Item):

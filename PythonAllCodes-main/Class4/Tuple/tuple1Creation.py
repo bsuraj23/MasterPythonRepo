@@ -14,3 +14,4 @@ t7=(10,)  #mandatory to end with comma for single tuple
 temp = (1,2,"aunp",1,2,"anup",1,2,"anup",1,2,"anup")
 print(temp)
 
+

@@ -1,0 +1,1 @@
+"""Core demo app"""

@@ -23,7 +23,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     # Return a fake token for demo
     return {"access_token": user["username"] + "_token", "token_type": "bearer"}
 
-@app.get("/users/me")
+@app.get("/users")
 def read_users_me(token: str = Depends(oauth2_scheme)):
     # In a real app, decode and verify token here
     return {"token": token}

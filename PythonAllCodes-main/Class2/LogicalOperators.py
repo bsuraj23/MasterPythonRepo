@@ -14,16 +14,28 @@
 # not
 # T F
 # F T
-a = True
-b = False
-resultAND = a and b   
+a = False
+b = False    
+resultAND = a and b
 resultOR = a or b
-if 1==1:
-    print("1 is equal to 1")
-    print(" result True only")
 
 
 
-if resultOR:
-    print(" result2 True nfdfhgdfhdagfgonly")
+
+if resultAND:    
+    print("q is 89")
+    if resultOR:
+        print(" result2 True only")
+
+
+
+        
+else:
+    print("q is not 89")
+
+
+
+
+# if resultOR:
+#     print(" result2 True nfdfhgdfhdagfgonly")
 

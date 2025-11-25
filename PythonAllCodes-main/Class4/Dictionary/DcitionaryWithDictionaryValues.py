@@ -1,7 +1,13 @@
-d = {'emp1': {'name': 'John', 'age': 30}}
+
 d2 = {'a': {'x': 1}, 'b': {'y': 2}}
-d3 = {'nested': {'key': 'value'}}
-d4 = {'person': {'name': 'Alice', 'id': 101}}
+d3 = {'outer': {'key': 'value'}}
+
+
+d4 = {'person1': {'name': 'ajay', 'id': 101},
+'person2': {'name': 'ayub', 'id': 102}}
+
+
+
 d5 = {'outer': {'inner': {'leaf': 'node'}}}
 print(d)
 print(d2)
@@ -15,10 +21,12 @@ for key, value in d.items():
 for key, value in d2.items():
     print(f"Key: {key}, Value: {value}")
 
+    
+d = {'emp1': {'name': 'John', 'age': 30}}
 # Iterating over nested dictionary values
 for key, value in d.items():
-    for inner_key, inner_value in value.items():
-        print(f"{key} -> {inner_key}: {inner_value}")
+    for a, b in value.items():
+        print(f"{key} -> {a}: {b}")
 
 # Iterating and printing all keys and values in d5 (deeply nested)
 def print_nested_dict(dct, parent_key=""):

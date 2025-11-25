@@ -1,2 +1,49 @@
-fastapi
-uvicorn
+# FastAPI Core Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Database Integration
+sqlalchemy>=2.0.0
+pymysql>=1.1.0
+psycopg2-binary>=2.9.0
+alembic>=1.12.0
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.6
+
+# Data Validation & Serialization
+pydantic>=2.4.0
+pydantic[email]>=2.4.0
+
+# HTTP Client (for external API calls)
+httpx>=0.25.0
+requests>=2.31.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# File Handling
+python-multipart>=0.0.6
+aiofiles>=23.2.0
+
+# WebSocket Support
+websockets>=11.0.0
+
+# Background Tasks
+celery>=5.3.0
+redis>=5.0.0
+
+# Development & Debugging
+python-dotenv>=1.0.0
+
+# Optional: For specific examples
+# Uncomment as needed:
+# email-validator>=2.0.0  # For email validation in Pydantic models
+# jinja2>=3.1.0           # For HTML templates
+# python-dateutil>=2.8.0 # For date/time handling
+# pillow>=10.0.0          # For image processing
+# pandas>=2.0.0           # For data analysis examples
+# numpy>=1.24.0           # For scientific computing examples

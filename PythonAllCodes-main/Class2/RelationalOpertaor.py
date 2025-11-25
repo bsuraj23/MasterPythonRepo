@@ -1,7 +1,19 @@
 # > <   !=  ==
 
+if 5>2:
+    print()
+    print("2 is greater than 5")
+    print("dcadadsadsad0000")
+    a=90
+    b=90
+    c=a*b
+    print("The value of c is ",c)
 
-value1 = 11
+
+
+
+
+value1 = 5
 value2 = 21
 
 if value1 > value2:

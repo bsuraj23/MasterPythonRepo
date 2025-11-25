@@ -1,0 +1,13 @@
+[
+  {
+    "model": "apps.models_demo.blogpost",
+    "pk": 1,
+    "fields": {
+      "title": "Welcome to Django Demo",
+      "content": "This is a sample blog post created as fixture.",
+      "published": true,
+      "created_at": "2025-10-17T00:00:00Z",
+      "updated_at": "2025-10-17T00:00:00Z"
+    }
+  }
+]

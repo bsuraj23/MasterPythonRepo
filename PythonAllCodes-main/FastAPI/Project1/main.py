@@ -43,7 +43,6 @@ def create_database_if_not_exists():
     """Create the university_portal database if it doesn't exist"""
     try:
         # Try to connect to the specific database
-        #check if old connection object exists then only 
         engine.connect()
         print("✅ Database 'university_portal' exists and is accessible")
     except Exception as e:
@@ -79,10 +78,10 @@ class ItemCreate(BaseModel):
 
 class ItemRead(ItemCreate):
     id: int
-    
+    #adding this for pydantic v2 compatibility
     class Config:
         from_attributes = True  # For Pydantic v2
-
+#       orm_mode = True  # For Pydantic v1
 app = FastAPI(title="University Portal API", description="A simple CRUD API with MySQL")
 
 def get_db():
@@ -96,7 +95,7 @@ def get_db():
 def read_root():
     return {"message": "Welcome to University Portal API", "database": "MySQL"}
 
-@app.post("/itemsmain/", response_model=ItemRead)
+@app.post("/items/", response_model=ItemRead)
 def create_item(item: ItemCreate, db: Session = Depends(get_db)):
     db_item = Item(name=item.name, description=item.description)
     db.add(db_item)

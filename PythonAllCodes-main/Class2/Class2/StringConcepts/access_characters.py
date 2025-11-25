@@ -1,4 +1,13 @@
-s = "Python is easy"
-print(s)
-print(s[0])    # P
-print(s[-1])   # n
+statement     = "Python is easy"
+print(statement)  
+print(statement[0])    # P
+print(statement[-1])   # n
+
+
+
+
+
+    
+
+
+

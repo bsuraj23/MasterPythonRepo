@@ -2,12 +2,13 @@ from fastapi import FastAPI, BackgroundTasks, WebSocket
 
 app = FastAPI()
 
-def send_email(email: str, message: str):
+def send_email2(email: str, message: str):
+    #code to connect to email server and send email
     print(f"Sending email to {email}: {message}")
 
 @app.post("/send-email/")
 def send_email_endpoint(email: str, message: str, background_tasks: BackgroundTasks):
-    background_tasks.add_task(send_email, email, message)
+    background_tasks.add_task(send_email2, email, message)
     return {"message": "Email will be sent in the background"}
 
 @app.websocket("/ws")
@@ -18,3 +19,4 @@ async def websocket_endpoint(websocket: WebSocket):
         await websocket.send_text(f"Message received: {data}")
 
 #Homework: Implement a chat application using WebSockets where multiple clients can send and receive messages in real-time.
+#Homeworkk websocket explanation 

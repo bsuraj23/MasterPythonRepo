@@ -13,6 +13,7 @@ print(temp2)
 #null
 #can be chnanged 
 print("Before using clear ",temp2)
+temp2.discard(temp2())
 temp2.clear()
 print("after using clear ",temp2)
 temp2.discard()

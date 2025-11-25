@@ -1,3 +1,3 @@
-s = "Python"
-print("th" in s)     # True
-print("abc" not in s) # True
+s = "Python_Sampath"
+print("Sampath" not in s)     # True
+print("abc"  in s) # True

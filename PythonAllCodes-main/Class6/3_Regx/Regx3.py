@@ -1,7 +1,7 @@
 import re
 
 pattern = re.compile(r'\d+')
-print(" sashdsadfsagfd")                        
+                       
 print(pattern.match('123abc'))
 
 pattern2 = re.compile(r'\w+')
@@ -17,7 +17,7 @@ pattern5 = re.compile(r'[A-Z]{4,}')
 print(pattern5.search('abCDLKKK123'))
 
 pattern6 = re.compile(r'.+')
-print(pattern6.match('SomeText'))
+print(pattern6.match(' '))
 
 pattern7 = re.compile(r'^\d')
 print(pattern7.match('121212ssss978787787value'))

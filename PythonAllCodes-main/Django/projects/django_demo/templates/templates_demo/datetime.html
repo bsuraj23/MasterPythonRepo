@@ -1,0 +1,8 @@
+{% extends "templates_demo/base.html" %}
+
+{% block content %}
+  <h2>Date/Time demo</h2>
+  <p>Now (raw): {{ now }}</p>
+  <p>Formatted: {{ now|date:"Y-m-d H:i:s" }}</p>
+  <p>Time until now: {{ now|timeuntil:now }}</p>
+{% endblock %}

@@ -1,7 +1,7 @@
 
 #Dafult Argument 
 
-def repeat_line(a="default", b=2):
+def repeat_line(a="sampath", b=1):
     for i in range(b):
         print(a)
 
@@ -9,7 +9,7 @@ def repeat_line(a="default", b=2):
 
 
 repeat_line()
-#repeat_line(2,"sometext")
+repeat_line("sometext",2)
 
 
 

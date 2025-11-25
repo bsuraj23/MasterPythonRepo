@@ -7,11 +7,47 @@ app = FastAPI()
 class Item(BaseModel):
     name: str
     price: float
-    is_offer: bool = None
+    is_offer: bool 
     origin: str
+@app.post("/items/")
+def create_item(item: Item):
+    items_db[item.name] = item
+    return item
 
+
+    
 # In-memory store for items
 items_db = {}
+
+
+class Data(BaseModel):
+    name: str
+    age: int
+    city: str
+
+
+@app.get("/get")
+def func():
+    #return Data object dymic ally
+
+    return Data(name="John", age=30, city="New York")
+    
+
+
+
+@app.post("/post")
+def func(data: Data):
+    return {"message": "Post API is working"}
+
+@app.put("/pathPut")
+def func(itemObj: Item):
+    return {"message": "Put API is working"}
+
+
+
+
+
+
 
 
 
@@ -34,10 +70,7 @@ def get_all_students():
 def get_all_items():
     return list(items_db.values())
 
-@app.post("/items/")
-def create_item(item: Item):
-    items_db[item.name] = item
-    return item
+
 
 @app.get("/items/{name}")
 def get_item(name: str):
