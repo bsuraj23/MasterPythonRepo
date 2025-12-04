@@ -1,0 +1,23 @@
+-- DROP VIEW Examples
+
+-- Basic DROP VIEW syntax
+DROP VIEW view_name;
+
+-- Drop single view
+DROP VIEW CustomerSummary;
+
+-- Drop multiple views
+DROP VIEW CustomerDetails, CustomerOrders;
+
+-- Drop view if exists (SQL Server)
+DROP VIEW IF EXISTS CustomerOrderStats;
+
+-- Drop view with CASCADE (PostgreSQL - removes dependent objects)
+DROP VIEW CustomerDetails CASCADE;
+
+-- Check if view exists before dropping (MySQL)
+DROP VIEW IF EXISTS CustomerSummary;
+
+-- Alternative check for view existence (MySQL)
+SELECT COUNT(*) FROM information_schema.VIEWS 
+WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'CustomerDetails';

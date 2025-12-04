@@ -1,0 +1,2 @@
+INSERT INTO CUSTOMER VALUES ('1000', 'Smith', 'John', 12,
+'California', '11111111')

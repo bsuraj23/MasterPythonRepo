@@ -1,0 +1,28 @@
+-- Conditional Functions Examples
+
+-- CASE WHEN - Conditional logic
+SELECT CustomerId, FirstName, LastName, AreaCode,
+       CASE 
+           WHEN AreaCode IS NULL THEN 'No Area Code'
+           WHEN AreaCode < 20 THEN 'Low Area Code'
+           WHEN AreaCode >= 20 AND AreaCode < 50 THEN 'Medium Area Code'
+           ELSE 'High Area Code'
+       END AS AreaCodeCategory
+FROM CUSTOMER;
+
+-- IFNULL/COALESCE - Handle NULL values
+SELECT CustomerId, FirstName, LastName,
+       COALESCE(AreaCode, 0) AS AreaCodeWithDefault,
+       IFNULL(Phone, 'No Phone') AS PhoneWithDefault
+FROM CUSTOMER;
+
+-- NULLIF - Return NULL if values are equal
+SELECT CustomerId, FirstName, 
+       NULLIF(FirstName, 'John') AS NameOrNull
+FROM CUSTOMER;
+
+-- IF - Simple conditional (MySQL)
+SELECT CustomerId, FirstName, AreaCode,
+       IF(AreaCode > 25, 'High', 'Low') AS AreaCodeLevel
+FROM CUSTOMER
+WHERE AreaCode IS NOT NULL;

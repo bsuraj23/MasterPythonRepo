@@ -1,5 +1,6 @@
 #code for inheritance concept is a
 class A:
+    a=90
     def func1(self):
         print("This is function 1 from class A")    
 class B(A):   #inheriting class A
@@ -9,6 +10,7 @@ class C(B):   #inheriting class B
     def func3(self):
         print("This is function 3 from class C")
 obj = C()
+print(obj.a)
 obj.func1() #calling class A function   
 obj.func2() #calling class B function
 obj.func3() #calling class C function
@@ -27,9 +29,9 @@ class Test():
 
 
 
-obj = Sample()
-obj1 = Test()
-print(type(obj))
+objSample = Sample()
+objTest = Test()
+print(type(objSample))
 
 
 

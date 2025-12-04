@@ -1,0 +1,36 @@
+-- Numeric Functions Examples
+
+-- ROUND - Round to specified decimal places
+SELECT AreaCode, ROUND(AreaCode * 1.5, 2) AS RoundedValue FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- CEILING/CEIL - Round up to nearest integer
+SELECT AreaCode, CEILING(AreaCode / 3.0) AS CeilingValue FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- FLOOR - Round down to nearest integer
+SELECT AreaCode, FLOOR(AreaCode / 3.0) AS FloorValue FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- ABS - Absolute value
+SELECT AreaCode, ABS(AreaCode - 50) AS AbsoluteDifference FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- POWER - Raise to power
+SELECT AreaCode, POWER(AreaCode, 2) AS AreaCodeSquared FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- SQRT - Square root
+SELECT AreaCode, SQRT(AreaCode) AS SquareRoot FROM CUSTOMER WHERE AreaCode IS NOT NULL AND AreaCode >= 0;
+
+-- MOD/% - Modulo (remainder)
+SELECT AreaCode, AreaCode % 10 AS LastDigit FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- RAND/RANDOM - Random number
+SELECT CustomerId, FirstName, RAND() AS RandomValue FROM CUSTOMER;
+
+-- SIGN - Sign of number (-1, 0, 1)
+SELECT AreaCode, SIGN(AreaCode - 25) AS SignValue FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- Mathematical calculations with customer data
+SELECT CustomerId, AreaCode,
+       ROUND(AreaCode * 1.1, 0) AS IncreasedAreaCode,
+       POWER(AreaCode, 2) AS AreaCodeSquared,
+       SQRT(AreaCode) AS AreaCodeSqrt
+FROM CUSTOMER 
+WHERE AreaCode IS NOT NULL;

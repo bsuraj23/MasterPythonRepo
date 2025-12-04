@@ -1,0 +1,27 @@
+-- DROP INDEX Examples
+
+-- Basic DROP INDEX syntax
+DROP INDEX index_name ON table_name;
+
+-- Drop single index
+DROP INDEX idx_customer_lastname ON CUSTOMER;
+
+-- Drop index (MySQL syntax)
+DROP INDEX idx_customer_name_area ON CUSTOMER;
+
+-- Drop index (PostgreSQL syntax)
+DROP INDEX idx_customer_lastname;
+
+-- Drop index if exists
+DROP INDEX IF EXISTS idx_customer_phone ON CUSTOMER;
+
+-- Drop multiple indexes
+DROP INDEX idx_customer_lastname ON CUSTOMER;
+DROP INDEX idx_customer_name_area ON CUSTOMER;
+DROP INDEX idx_customer_phone ON CUSTOMER;
+
+-- Check if index exists before dropping (MySQL)
+SELECT COUNT(*) FROM information_schema.STATISTICS 
+WHERE TABLE_SCHEMA = DATABASE() 
+AND TABLE_NAME = 'CUSTOMER' 
+AND INDEX_NAME = 'idx_customer_lastname';

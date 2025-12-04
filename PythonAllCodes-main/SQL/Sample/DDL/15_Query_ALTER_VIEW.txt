@@ -1,0 +1,33 @@
+-- ALTER VIEW Examples
+
+-- ALTER VIEW syntax
+ALTER VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE new_condition;
+
+-- Modify existing view to add more columns
+ALTER VIEW CustomerSummary AS
+SELECT CustomerId, 
+       FirstName, 
+       LastName, 
+       CONCAT(FirstName, ' ', LastName) AS FullName,
+       AreaCode,
+       Phone
+FROM CUSTOMER;
+
+-- Modify view to change filtering
+ALTER VIEW CustomerDetails AS
+SELECT CustomerId, 
+       FirstName, 
+       LastName, 
+       AreaCode,
+       CASE 
+           WHEN AreaCode IS NULL THEN 'Unknown'
+           WHEN AreaCode < 15 THEN 'Very Low'
+           WHEN AreaCode >= 15 AND AreaCode < 30 THEN 'Low'
+           WHEN AreaCode >= 30 AND AreaCode < 45 THEN 'Medium'
+           ELSE 'High'
+       END AS AreaCodeLevel
+FROM CUSTOMER
+WHERE FirstName IS NOT NULL;

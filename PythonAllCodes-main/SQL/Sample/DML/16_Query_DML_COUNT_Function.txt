@@ -1,0 +1,16 @@
+-- COUNT Function Examples
+
+-- Count all records in a table
+SELECT COUNT(*) FROM CUSTOMER;
+
+-- Count non-null values in a specific column
+SELECT COUNT(AreaCode) FROM CUSTOMER;
+
+-- Count distinct values
+SELECT COUNT(DISTINCT LastName) FROM CUSTOMER;
+
+-- Count with WHERE condition
+SELECT COUNT(*) FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- Count records by condition
+SELECT COUNT(*) AS TotalCustomers FROM CUSTOMER WHERE LastName = 'Smith';

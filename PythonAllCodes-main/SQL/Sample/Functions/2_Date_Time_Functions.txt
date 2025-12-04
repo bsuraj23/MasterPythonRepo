@@ -1,0 +1,32 @@
+-- Date and Time Functions Examples
+
+-- NOW/CURRENT_TIMESTAMP - Current date and time
+SELECT NOW() AS CurrentDateTime;
+SELECT CURRENT_TIMESTAMP() AS CurrentDateTime;
+
+-- CURDATE/CURTIME - Current date and time
+SELECT CURDATE() AS CurrentDate;
+SELECT CURTIME() AS CurrentTime;
+
+-- YEAR, MONTH, DAY - Extract date components
+SELECT YEAR(NOW()) AS CurrentYear;
+SELECT MONTH(NOW()) AS CurrentMonth;
+SELECT DAY(NOW()) AS CurrentDay;
+
+-- DATE_ADD - Add interval to date
+SELECT DATE_ADD(NOW(), INTERVAL 30 DAY) AS DatePlus30Days;
+SELECT DATE_ADD(NOW(), INTERVAL 6 MONTH) AS DatePlus6Months;
+SELECT DATE_ADD(NOW(), INTERVAL 1 YEAR) AS DatePlus1Year;
+
+-- DATEDIFF - Calculate difference between dates
+SELECT DATEDIFF(NOW(), '2023-01-01') AS DaysSinceNewYear;
+
+-- DATE_FORMAT - Format date display
+SELECT DATE_FORMAT(NOW(), '%Y-%m-%d') AS FormattedDate;
+SELECT DATE_FORMAT(NOW(), '%d/%m/%Y %H:%i:%s') AS CustomFormat;
+
+-- Working with customer data and dates
+SELECT CustomerId, FirstName, LastName,
+       NOW() AS Today,
+       DATE_ADD(NOW(), INTERVAL 1 YEAR) AS NextYear
+FROM CUSTOMER;

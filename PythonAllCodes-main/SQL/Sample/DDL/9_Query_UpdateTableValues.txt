@@ -1,0 +1,1 @@
+update CUSTOMER set AreaCode=46 where CustomerId=2

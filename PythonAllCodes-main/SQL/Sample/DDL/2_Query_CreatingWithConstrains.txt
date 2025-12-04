@@ -1,0 +1,10 @@
+CREATE TABLE CUSTOMER
+(
+CustomerId int AUTO_INCREMENT PRIMARY KEY,
+CustomerNumber int NOT NULL UNIQUE,
+LastName varchar(50) NOT NULL,
+FirstName varchar(50) NOT NULL,
+AreaCode int,
+Address varchar(50),
+Phone varchar(50)
+)

@@ -2,6 +2,11 @@
 class Student:
     name = "name"
     age = 14  
+    def display(self):
+        print(self.name)
+        print(self.age)
+
+        
 
 
 

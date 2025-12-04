@@ -1,0 +1,26 @@
+-- Row Subqueries Examples
+
+-- Row subquery returns multiple columns in a single row
+
+-- Find customers with specific combination of values
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE (FirstName, LastName) = (SELECT 'John', 'Smith');
+
+-- Find customer with maximum CustomerId and their details
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE (CustomerId, AreaCode) = (
+    SELECT MAX(CustomerId), MAX(AreaCode) 
+    FROM CUSTOMER 
+    WHERE AreaCode IS NOT NULL
+);
+
+-- Row subquery with comparison operators
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE (AreaCode, CustomerId) > (
+    SELECT AVG(AreaCode), AVG(CustomerId) 
+    FROM CUSTOMER 
+    WHERE AreaCode IS NOT NULL
+);

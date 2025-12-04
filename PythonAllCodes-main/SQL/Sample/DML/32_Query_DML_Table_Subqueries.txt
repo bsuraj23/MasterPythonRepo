@@ -1,0 +1,33 @@
+-- Table Subqueries Examples
+
+-- Table subquery returns multiple columns and multiple rows
+
+-- Use subquery in FROM clause
+SELECT avg_area.AvgAreaCode, COUNT(*) AS CustomerCount
+FROM (
+    SELECT AreaCode, AVG(CustomerId) AS AvgAreaCode
+    FROM CUSTOMER
+    WHERE AreaCode IS NOT NULL
+    GROUP BY AreaCode
+) AS avg_area
+WHERE avg_area.AvgAreaCode > 2;
+
+-- Complex table subquery with JOINs
+SELECT customer_orders.FirstName, customer_orders.LastName, customer_orders.OrderCount
+FROM (
+    SELECT c.CustomerId, c.FirstName, c.LastName, COUNT(o.OrderId) AS OrderCount
+    FROM CUSTOMER c
+    LEFT JOIN Orders o ON c.CustomerId = o.CustomerId
+    GROUP BY c.CustomerId, c.FirstName, c.LastName
+) AS customer_orders
+WHERE customer_orders.OrderCount > 1;
+
+-- Table subquery with ranking (MySQL 8.0+)
+SELECT ranked_customers.FirstName, ranked_customers.LastName, ranked_customers.AreaCode, ranked_customers.CustomerRank
+FROM (
+    SELECT FirstName, LastName, AreaCode,
+           ROW_NUMBER() OVER (ORDER BY AreaCode DESC) AS CustomerRank
+    FROM CUSTOMER
+    WHERE AreaCode IS NOT NULL
+) AS ranked_customers
+WHERE ranked_customers.CustomerRank <= 3;

@@ -1,0 +1,24 @@
+-- LEFT JOIN Examples
+
+-- Basic LEFT JOIN syntax
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+
+-- LEFT JOIN - Get all customers and their orders (including customers without orders)
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId;
+
+-- LEFT JOIN with WHERE to find customers without orders
+SELECT c.CustomerId, c.FirstName, c.LastName
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId
+WHERE o.OrderId IS NULL;
+
+-- LEFT JOIN with aggregate functions
+SELECT c.FirstName, c.LastName, COUNT(o.OrderId) AS OrderCount, COALESCE(SUM(o.TotalAmount), 0) AS TotalSpent
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId
+GROUP BY c.CustomerId, c.FirstName, c.LastName;

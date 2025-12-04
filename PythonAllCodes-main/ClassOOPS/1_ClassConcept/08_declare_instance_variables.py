@@ -12,16 +12,18 @@ class Student:
     # instance method example of declaring instance variable
     def set_age(self, age):
         self.age = age
+    def display(self):
+        print("Name:", self.name, "Age:", self.age)
 
-obj = Student("John")
-print(obj.get_name())  # Output: John
-obj.set_age(20)
+vamshi = Student("Vamshi")
+print(vamshi.get_name())  # Output: Vamshi
+vamshi.set_age(20)
+print(vamshi.age)  # Output: 20
+vamshi.display()  # Output: Name: Vamshi Age: 20
 
-Obj2 = Student("mohan")
-print(Obj2.get_name())  # Output: mohan
-Obj2.set_age(30)
-
-
+mohan = Student("mohan")
+print(mohan.get_name())  # Output: mohan
+mohan.set_age(30)
 
 #declaring instance variable outside the class using object reference variable
 obj.age=20  

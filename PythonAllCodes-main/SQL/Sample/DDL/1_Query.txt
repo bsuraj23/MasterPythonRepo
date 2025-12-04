@@ -1,0 +1,38 @@
+-- Create a Database
+CREATE DATABASE Medha;
+
+
+CREATE TABLE table_name
+(
+column_name1 data_type,
+column_name2 data_type,
+column_name3 data_type,
+....
+) 
+
+
+
+-- Use the Database
+USE SchoolDB;
+
+-- Create Table
+CREATE TABLE Students (
+    Roll_No INT PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Address VARCHAR(100),
+    Phone INT(15),
+    Age INT CHECK (Age > 0)
+);
+
+
+CREATE TABLE CUSTOMER
+(
+CustomerId int AUTO_INCREMENT PRIMARY KEY,
+CustomerNumber int NOT NULL UNIQUE,
+LastName varchar(50) NOT NULL,
+FirstName varchar(50) NOT NULL,
+AreaCode int,
+Address varchar(50),
+Phone varchar(50)
+)
+

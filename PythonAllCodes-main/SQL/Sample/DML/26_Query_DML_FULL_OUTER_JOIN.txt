@@ -1,0 +1,23 @@
+-- FULL OUTER JOIN Examples
+
+-- Basic FULL OUTER JOIN syntax
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name = table2.column_name;
+
+-- FULL OUTER JOIN - Get all customers and all orders
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+FULL OUTER JOIN Orders o ON c.CustomerId = o.CustomerId;
+
+-- Note: MySQL doesn't support FULL OUTER JOIN directly
+-- Alternative using UNION of LEFT and RIGHT JOINs:
+
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId
+UNION
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+RIGHT JOIN Orders o ON c.CustomerId = o.CustomerId;

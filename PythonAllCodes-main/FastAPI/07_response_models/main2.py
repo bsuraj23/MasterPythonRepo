@@ -9,11 +9,13 @@ class Item(BaseModel):
 
 
 class XYZ(BaseModel):
+    
         x: str
         y: int 
         b: float
         message: str
         z: bool
+    
 
 @app.get("/wednesday/HelloWorld", response_model=XYZ)
 def function():

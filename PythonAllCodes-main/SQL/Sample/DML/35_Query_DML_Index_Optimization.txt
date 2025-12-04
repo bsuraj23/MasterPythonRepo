@@ -1,0 +1,40 @@
+-- Query Optimization with Indexes
+
+-- Show execution plan to see index usage
+EXPLAIN SELECT * FROM CUSTOMER WHERE LastName = 'Smith';
+
+-- Query that benefits from index on LastName
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE LastName = 'Smith';
+
+-- Query that benefits from composite index
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE LastName = 'Smith' AND FirstName = 'John';
+
+-- Range query that benefits from index
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE AreaCode BETWEEN 10 AND 30;
+
+-- JOIN query optimization with indexes
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+INNER JOIN Orders o ON c.CustomerId = o.CustomerId
+WHERE c.LastName = 'Smith';
+
+-- Using index for ORDER BY optimization
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+ORDER BY LastName, FirstName;
+
+-- Query to check index usage (MySQL)
+SELECT 
+    s.TABLE_NAME,
+    s.INDEX_NAME,
+    s.SEQ_IN_INDEX,
+    s.COLUMN_NAME
+FROM information_schema.STATISTICS s
+WHERE s.TABLE_SCHEMA = DATABASE() AND s.TABLE_NAME = 'CUSTOMER'
+ORDER BY s.TABLE_NAME, s.INDEX_NAME, s.SEQ_IN_INDEX;

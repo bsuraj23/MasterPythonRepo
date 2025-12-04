@@ -1,0 +1,1 @@
+select * from CUSTOMER where CustomerNumber='1001'

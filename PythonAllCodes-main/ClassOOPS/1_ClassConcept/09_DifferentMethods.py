@@ -5,13 +5,17 @@
 
 
 
+
 class MyClass:
+    
+
+    a1 = 90  # Class variable
     # Instance Method
     def instance_method(self):
         return f"Instance method called on {self}"
-   
+  
     # Class Method
-    @classmethod
+    @classmethod 
     def class_method(cls):
         return f"Class method called on {cls}"
 
@@ -20,10 +24,21 @@ class MyClass:
     def static_method():
         return "Static method called"   
 # Create an instance of MyClass
-obj = MyClass() 
-print(obj.instance_method())  # Calls instance method
+sam = MyClass() 
+ajay = MyClass()
+
+
+print(sam.instance_method())  # Instance method called on sam
+print(ajay.instance_method())  # Instance method called on ajay
 print(MyClass.class_method())  # Calls class method
-print(MyClass.static_method())  # Calls static method   
+print(MyClass.static_method())  # Calls static method  
+
+
+
+
+
+
+
 
 
 #Instance methods can access and modify object state,
@@ -47,16 +62,15 @@ class Car:
     def set_color(self, new_color):
         self.color = new_color
         return f"Car color changed to {self.color}"
-car = Car("red")
-print(car.describe())  # Only car is red!
-car.set_color("blue")  # Change color to blue
-print(car.describe())  # Now car is blue!
-print(car.get_color())  # Get the current color using the getter
-car.set_color("green")  # Change color to green
-print(car.describe())  # Now car is green!
-
-my_car = Car("red")
-print(my_car.describe())  # Only my_car is red!
+maruthi800 = Car("RED")
+print(maruthi800.describe())  # "This car is RED
+maruthi800.set_color("blue")  # Change color to blue
+print(maruthi800.describe())  #"This car is blue
+print(maruthi800.get_color())  # Get the current color using the getter
+maruthi800.set_color("green")  # Change color to green
+print(maruthi800.describe())  # Now maruthi800 is green!
+my_car = Car("CYan")
+print(my_car.describe())  # This car is CYan
 
 #more Examples
 class Circle:

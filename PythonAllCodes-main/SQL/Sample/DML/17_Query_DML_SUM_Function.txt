@@ -1,0 +1,13 @@
+-- SUM Function Examples
+
+-- Sum of all values in a column
+SELECT SUM(AreaCode) FROM CUSTOMER;
+
+-- Sum with WHERE condition
+SELECT SUM(AreaCode) FROM CUSTOMER WHERE LastName = 'Smith';
+
+-- Sum with alias
+SELECT SUM(AreaCode) AS TotalAreaCodes FROM CUSTOMER;
+
+-- Multiple SUM operations
+SELECT SUM(AreaCode) AS TotalAreaCodes, COUNT(*) AS CustomerCount FROM CUSTOMER;

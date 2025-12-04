@@ -1,0 +1,25 @@
+-- Using Views Examples
+
+-- Query a view like a table
+SELECT * FROM CustomerSummary;
+
+-- Query view with WHERE clause
+SELECT * FROM CustomerDetails WHERE AreaCodeLevel = 'High';
+
+-- Query view with ORDER BY
+SELECT * FROM CustomerOrders ORDER BY OrderDate DESC;
+
+-- Join views with tables
+SELECT cs.FullName, co.OrderCount, co.TotalSpent
+FROM CustomerSummary cs
+JOIN CustomerOrderStats co ON cs.CustomerId = co.CustomerId
+WHERE co.OrderCount > 0;
+
+-- Use view in subquery
+SELECT * FROM CustomerDetails
+WHERE CustomerId IN (SELECT CustomerId FROM CustomerOrders WHERE TotalAmount > 100);
+
+-- Update data through view (if updatable)
+UPDATE CustomerSummary 
+SET FirstName = 'Johnny' 
+WHERE CustomerId = 1;

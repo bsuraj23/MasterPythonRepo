@@ -1,0 +1,25 @@
+-- SELF JOIN Examples
+
+-- Self JOIN syntax - joining a table with itself
+SELECT column_name(s)
+FROM table1 t1, table1 t2
+WHERE condition;
+
+-- Alternative SELF JOIN syntax
+SELECT column_name(s)
+FROM table1 t1
+JOIN table1 t2 ON condition;
+
+-- Example: Find customers with the same LastName
+SELECT c1.FirstName AS Customer1, c1.LastName, c2.FirstName AS Customer2
+FROM CUSTOMER c1
+JOIN CUSTOMER c2 ON c1.LastName = c2.LastName
+WHERE c1.CustomerId != c2.CustomerId;
+
+-- Example: Find customers in the same area
+SELECT CONCAT(c1.FirstName, ' ', c1.LastName) AS Customer1, 
+       CONCAT(c2.FirstName, ' ', c2.LastName) AS Customer2,
+       c1.AreaCode
+FROM CUSTOMER c1
+JOIN CUSTOMER c2 ON c1.AreaCode = c2.AreaCode
+WHERE c1.CustomerId < c2.CustomerId AND c1.AreaCode IS NOT NULL;

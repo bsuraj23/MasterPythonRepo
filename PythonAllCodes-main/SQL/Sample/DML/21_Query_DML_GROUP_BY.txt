@@ -1,0 +1,28 @@
+-- GROUP BY Clause Examples
+
+-- Basic GROUP BY syntax
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name;
+
+-- Group customers by LastName
+SELECT LastName, COUNT(*) AS CustomerCount
+FROM CUSTOMER
+GROUP BY LastName;
+
+-- Group by multiple columns
+SELECT LastName, FirstName, COUNT(*) AS Count
+FROM CUSTOMER
+GROUP BY LastName, FirstName;
+
+-- Group with aggregate functions
+SELECT AreaCode, COUNT(*) AS CustomerCount, AVG(CustomerId) AS AvgCustomerId
+FROM CUSTOMER
+WHERE AreaCode IS NOT NULL
+GROUP BY AreaCode;
+
+-- Group by with ORDER BY
+SELECT LastName, COUNT(*) AS CustomerCount
+FROM CUSTOMER
+GROUP BY LastName
+ORDER BY CustomerCount DESC;

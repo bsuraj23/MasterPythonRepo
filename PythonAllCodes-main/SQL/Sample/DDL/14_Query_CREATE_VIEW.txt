@@ -1,0 +1,42 @@
+-- CREATE VIEW Examples
+
+-- Basic CREATE VIEW syntax
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+-- Simple view - Customer summary
+CREATE VIEW CustomerSummary AS
+SELECT CustomerId, FirstName, LastName, CONCAT(FirstName, ' ', LastName) AS FullName
+FROM CUSTOMER;
+
+-- View with calculated columns
+CREATE VIEW CustomerDetails AS
+SELECT CustomerId, 
+       FirstName, 
+       LastName, 
+       AreaCode,
+       CASE 
+           WHEN AreaCode IS NULL THEN 'No Area Code'
+           WHEN AreaCode < 20 THEN 'Low'
+           WHEN AreaCode >= 20 AND AreaCode < 50 THEN 'Medium'
+           ELSE 'High'
+       END AS AreaCodeLevel
+FROM CUSTOMER;
+
+-- View with JOIN
+CREATE VIEW CustomerOrders AS
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId;
+
+-- View with aggregate functions
+CREATE VIEW CustomerOrderStats AS
+SELECT c.CustomerId, c.FirstName, c.LastName,
+       COUNT(o.OrderId) AS OrderCount,
+       COALESCE(SUM(o.TotalAmount), 0) AS TotalSpent,
+       COALESCE(AVG(o.TotalAmount), 0) AS AvgOrderAmount
+FROM CUSTOMER c
+LEFT JOIN Orders o ON c.CustomerId = o.CustomerId
+GROUP BY c.CustomerId, c.FirstName, c.LastName;

@@ -1,0 +1,29 @@
+-- Column Subqueries Examples
+
+-- Column subquery returns a single column with multiple rows
+
+-- Find customers whose AreaCode matches any from a specific set
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE AreaCode IN (SELECT DISTINCT AreaCode FROM CUSTOMER WHERE LastName = 'Smith');
+
+-- Find customers who don't have orders
+SELECT CustomerId, FirstName, LastName
+FROM CUSTOMER
+WHERE CustomerId NOT IN (SELECT DISTINCT CustomerId FROM Orders WHERE CustomerId IS NOT NULL);
+
+-- Using EXISTS with column subquery
+SELECT CustomerId, FirstName, LastName
+FROM CUSTOMER c
+WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerId = c.CustomerId);
+
+-- Find customers with AreaCode in top 3 values
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE AreaCode IN (
+    SELECT DISTINCT AreaCode 
+    FROM CUSTOMER 
+    WHERE AreaCode IS NOT NULL 
+    ORDER BY AreaCode DESC 
+    LIMIT 3
+);

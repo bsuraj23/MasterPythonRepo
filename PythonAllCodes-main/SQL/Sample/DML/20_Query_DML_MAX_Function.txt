@@ -1,0 +1,13 @@
+-- MAX Function Examples
+
+-- Maximum value in a column
+SELECT MAX(AreaCode) FROM CUSTOMER;
+
+-- Maximum with WHERE condition
+SELECT MAX(AreaCode) FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- Maximum value with alias
+SELECT MAX(AreaCode) AS MaxAreaCode FROM CUSTOMER;
+
+-- Find customer with maximum AreaCode
+SELECT * FROM CUSTOMER WHERE AreaCode = (SELECT MAX(AreaCode) FROM CUSTOMER);

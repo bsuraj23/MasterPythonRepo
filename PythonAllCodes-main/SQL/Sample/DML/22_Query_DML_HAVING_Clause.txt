@@ -1,0 +1,33 @@
+-- HAVING Clause Examples
+
+-- Basic HAVING syntax
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > 1;
+
+-- HAVING with COUNT
+SELECT LastName, COUNT(*) AS CustomerCount
+FROM CUSTOMER
+GROUP BY LastName
+HAVING COUNT(*) > 1;
+
+-- HAVING with SUM
+SELECT AreaCode, SUM(CustomerId) AS TotalCustomerIds
+FROM CUSTOMER
+WHERE AreaCode IS NOT NULL
+GROUP BY AreaCode
+HAVING SUM(CustomerId) > 10;
+
+-- HAVING with AVG
+SELECT AreaCode, AVG(CustomerId) AS AvgCustomerId, COUNT(*) AS CustomerCount
+FROM CUSTOMER
+WHERE AreaCode IS NOT NULL
+GROUP BY AreaCode
+HAVING AVG(CustomerId) > 5;
+
+-- HAVING with multiple conditions
+SELECT LastName, COUNT(*) AS CustomerCount
+FROM CUSTOMER
+GROUP BY LastName
+HAVING COUNT(*) > 1 AND LastName IS NOT NULL;

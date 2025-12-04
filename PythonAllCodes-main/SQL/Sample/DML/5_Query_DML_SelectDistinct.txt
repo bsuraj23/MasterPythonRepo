@@ -1,0 +1,3 @@
+select distinct <column_names> from <table_names>
+
+select distinct FirstName from CUSTOMER

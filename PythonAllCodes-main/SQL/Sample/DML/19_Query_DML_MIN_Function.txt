@@ -1,0 +1,13 @@
+-- MIN Function Examples
+
+-- Minimum value in a column
+SELECT MIN(AreaCode) FROM CUSTOMER;
+
+-- Minimum with WHERE condition
+SELECT MIN(AreaCode) FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- Minimum value with alias
+SELECT MIN(AreaCode) AS MinAreaCode FROM CUSTOMER;
+
+-- Find customer with minimum AreaCode
+SELECT * FROM CUSTOMER WHERE AreaCode = (SELECT MIN(AreaCode) FROM CUSTOMER);

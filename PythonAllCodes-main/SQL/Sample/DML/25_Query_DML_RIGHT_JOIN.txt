@@ -1,0 +1,18 @@
+-- RIGHT JOIN Examples
+
+-- Basic RIGHT JOIN syntax
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name = table2.column_name;
+
+-- RIGHT JOIN - Get all orders and their customers (including orders without valid customers)
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+RIGHT JOIN Orders o ON c.CustomerId = o.CustomerId;
+
+-- RIGHT JOIN to find orders without valid customers
+SELECT o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+RIGHT JOIN Orders o ON c.CustomerId = o.CustomerId
+WHERE c.CustomerId IS NULL;

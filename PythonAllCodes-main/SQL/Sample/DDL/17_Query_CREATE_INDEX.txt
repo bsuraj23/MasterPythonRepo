@@ -1,0 +1,24 @@
+-- CREATE INDEX Examples (MySQL Compatible)
+
+-- Basic CREATE INDEX syntax
+CREATE INDEX index_name
+ON table_name (column1, column2);
+
+-- Simple index on single column
+CREATE INDEX idx_customer_lastname
+ON CUSTOMER (LastName);
+
+-- Composite index on multiple columns
+CREATE INDEX idx_customer_name_area
+ON CUSTOMER (LastName, FirstName, AreaCode);
+
+-- Unique index
+CREATE UNIQUE INDEX idx_customer_email
+ON CUSTOMER (CustomerNumber);
+
+-- Note: MySQL doesn't support filtered indexes like SQL Server
+-- All indexes in MySQL are non-clustered by default
+
+-- Full-text index (MySQL specific)
+CREATE FULLTEXT INDEX idx_customer_name_fulltext
+ON CUSTOMER (FirstName, LastName);

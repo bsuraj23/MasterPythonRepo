@@ -1,0 +1,23 @@
+-- TRUNCATE TABLE Examples
+
+-- Basic TRUNCATE syntax
+TRUNCATE TABLE table_name;
+
+-- Truncate CUSTOMER table (removes all data, keeps structure)
+TRUNCATE TABLE CUSTOMER;
+
+-- Truncate vs DELETE comparison:
+
+-- TRUNCATE TABLE (faster, resets identity, can't use WHERE)
+TRUNCATE TABLE Orders;
+
+-- DELETE (slower, can use WHERE, can be rolled back more easily)
+DELETE FROM Orders WHERE OrderDate < '2023-01-01';
+
+-- Note: TRUNCATE cannot be used with tables that have foreign key constraints
+-- Need to disable constraints first or use DELETE instead
+
+-- Truncate multiple tables (need separate statements)
+TRUNCATE TABLE OrderDetails;
+TRUNCATE TABLE Orders;
+TRUNCATE TABLE Products;

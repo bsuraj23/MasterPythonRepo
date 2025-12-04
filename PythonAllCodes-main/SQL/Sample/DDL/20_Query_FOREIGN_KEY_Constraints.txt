@@ -1,0 +1,40 @@
+-- Foreign Key Constraints Examples
+
+-- Add Foreign Key during table creation
+CREATE TABLE Orders (
+    OrderId INT PRIMARY KEY,
+    CustomerId INT,
+    OrderDate DATE,
+    TotalAmount DECIMAL(10,2),
+    FOREIGN KEY (CustomerId) REFERENCES CUSTOMER(CustomerId)
+);
+
+-- Add Foreign Key to existing table
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_Customer
+FOREIGN KEY (CustomerId) REFERENCES CUSTOMER(CustomerId);
+
+-- Foreign Key with ON DELETE CASCADE
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_Customer_Cascade
+FOREIGN KEY (CustomerId) REFERENCES CUSTOMER(CustomerId)
+ON DELETE CASCADE;
+
+-- Foreign Key with ON UPDATE CASCADE
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_Customer_Update
+FOREIGN KEY (CustomerId) REFERENCES CUSTOMER(CustomerId)
+ON UPDATE CASCADE;
+
+-- Drop Foreign Key constraint
+ALTER TABLE Orders
+DROP CONSTRAINT FK_Orders_Customer;
+
+-- Check Foreign Key constraints (MySQL)
+SELECT 
+    TABLE_NAME,
+    CONSTRAINT_NAME,
+    REFERENCED_TABLE_NAME,
+    REFERENCED_COLUMN_NAME
+FROM information_schema.KEY_COLUMN_USAGE
+WHERE TABLE_SCHEMA = DATABASE() AND REFERENCED_TABLE_NAME IS NOT NULL;

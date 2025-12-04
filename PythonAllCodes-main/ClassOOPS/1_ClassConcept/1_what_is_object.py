@@ -4,21 +4,22 @@
 class Person:
     pass
 
-obj1 = Person()
+obj = Person()
 
 class Student:
+
     pass
-nikshan = Student()
+Aditya = Student()
 
 class Automobile:
     tires="tires"   #//2 bytes
-    def func():   #// 7 Bytes
-        a=90  #// 1byte
-        print("")
+    def add(a,b):   #// 7 Bytes
+        return a+b
+        
 
 BMW = Automobile()  # 10 bytes
 print(BMW.tires)
-BMW.func()
+print(BMW.add(3,4))
 Thar = Automobile()  #bytes
 Hummer = Automobile()
 Audi = Automobile()

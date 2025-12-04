@@ -1,0 +1,25 @@
+-- INNER JOIN Examples
+
+-- Basic INNER JOIN syntax
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+-- INNER JOIN - Get customers with their orders
+SELECT c.CustomerId, c.FirstName, c.LastName, o.OrderId, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+INNER JOIN Orders o ON c.CustomerId = o.CustomerId;
+
+-- INNER JOIN with WHERE clause
+SELECT c.FirstName, c.LastName, o.OrderDate, o.TotalAmount
+FROM CUSTOMER c
+INNER JOIN Orders o ON c.CustomerId = o.CustomerId
+WHERE o.TotalAmount > 100;
+
+-- INNER JOIN with multiple tables
+SELECT c.FirstName, c.LastName, o.OrderDate, od.Quantity, p.ProductName
+FROM CUSTOMER c
+INNER JOIN Orders o ON c.CustomerId = o.CustomerId
+INNER JOIN OrderDetails od ON o.OrderId = od.OrderId
+INNER JOIN Products p ON od.ProductId = p.ProductId;

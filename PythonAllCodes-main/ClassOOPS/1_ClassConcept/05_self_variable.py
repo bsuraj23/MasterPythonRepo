@@ -14,3 +14,9 @@ s2 = Student()
 s2.show()
 s2.j = 200
 s2.show()   
+
+s3 = Student()
+print(s3.i)
+s3.show()
+
+

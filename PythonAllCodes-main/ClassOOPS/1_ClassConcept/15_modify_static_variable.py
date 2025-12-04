@@ -11,3 +11,4 @@ s2 = Student()
 print(Student.school)  # Accessing static variable via class
 s1.change_school("MET")  # Modifying static variable via instance method     
 print(Student.school)  # Accessing static variable via class    
+print(s2.school)

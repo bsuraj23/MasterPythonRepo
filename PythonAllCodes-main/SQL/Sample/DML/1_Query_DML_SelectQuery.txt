@@ -1,0 +1,4 @@
+select <column_names> from <table_names>
+
+
+select * from CUSTOMER

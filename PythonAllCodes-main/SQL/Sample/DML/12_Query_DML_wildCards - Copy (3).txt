@@ -1,0 +1,3 @@
+SELECT * FROM CUSTOMER WHERE LastName LIKE 'J_cks_n'
+
+SELECT * FROM CUSTOMER WHERE CustomerNumber LIKE '[10]%'

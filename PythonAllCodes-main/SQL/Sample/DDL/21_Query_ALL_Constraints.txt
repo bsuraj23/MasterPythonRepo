@@ -1,0 +1,45 @@
+-- Complete Constraints Examples
+
+-- PRIMARY KEY constraint
+CREATE TABLE Students (
+    StudentId INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL
+);
+
+-- Composite PRIMARY KEY
+CREATE TABLE Enrollments (
+    StudentId INT,
+    CourseId INT,
+    EnrollmentDate DATE,
+    PRIMARY KEY (StudentId, CourseId)
+);
+
+-- UNIQUE constraint
+ALTER TABLE CUSTOMER
+ADD CONSTRAINT UQ_Customer_Email UNIQUE (CustomerNumber);
+
+-- CHECK constraint
+ALTER TABLE CUSTOMER
+ADD CONSTRAINT CK_Customer_AreaCode CHECK (AreaCode > 0 AND AreaCode < 1000);
+
+-- NOT NULL constraint
+ALTER TABLE CUSTOMER
+ALTER COLUMN FirstName VARCHAR(50) NOT NULL;
+
+-- DEFAULT constraint
+ALTER TABLE CUSTOMER
+ADD CONSTRAINT DF_Customer_AreaCode DEFAULT 0 FOR AreaCode;
+
+-- Drop constraints
+ALTER TABLE CUSTOMER DROP CONSTRAINT UQ_Customer_Email;
+ALTER TABLE CUSTOMER DROP CONSTRAINT CK_Customer_AreaCode;
+ALTER TABLE CUSTOMER DROP CONSTRAINT DF_Customer_AreaCode;
+
+-- View constraint information (MySQL)
+SELECT 
+    TABLE_NAME,
+    CONSTRAINT_NAME,
+    CONSTRAINT_TYPE
+FROM information_schema.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = DATABASE()
+ORDER BY TABLE_NAME;

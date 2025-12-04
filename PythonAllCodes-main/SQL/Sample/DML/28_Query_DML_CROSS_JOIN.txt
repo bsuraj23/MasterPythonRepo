@@ -1,0 +1,28 @@
+-- CROSS JOIN Examples
+
+-- CROSS JOIN syntax (Cartesian Product)
+SELECT column_name(s)
+FROM table1
+CROSS JOIN table2;
+
+-- Alternative CROSS JOIN syntax
+SELECT column_name(s)
+FROM table1, table2;
+
+-- Example: Cross join between customers and products (all combinations)
+SELECT c.FirstName, c.LastName, p.ProductName, p.Price
+FROM CUSTOMER c
+CROSS JOIN Products p;
+
+-- Cross join with WHERE clause (acts like INNER JOIN)
+SELECT c.FirstName, c.LastName, p.ProductName
+FROM CUSTOMER c
+CROSS JOIN Products p
+WHERE p.Price > 50;
+
+-- Practical example: Generate all possible customer-product combinations for analysis
+SELECT c.CustomerId, c.FirstName, p.ProductId, p.ProductName,
+       'Potential Customer' AS Status
+FROM CUSTOMER c
+CROSS JOIN Products p
+ORDER BY c.CustomerId, p.ProductId;

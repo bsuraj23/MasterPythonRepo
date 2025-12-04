@@ -1,0 +1,13 @@
+-- AVG Function Examples
+
+-- Average of all values in a column
+SELECT AVG(AreaCode) FROM CUSTOMER;
+
+-- Average with WHERE condition
+SELECT AVG(AreaCode) FROM CUSTOMER WHERE AreaCode IS NOT NULL;
+
+-- Average with alias
+SELECT AVG(AreaCode) AS AverageAreaCode FROM CUSTOMER;
+
+-- Average rounded to 2 decimal places
+SELECT ROUND(AVG(AreaCode), 2) AS AverageAreaCode FROM CUSTOMER;

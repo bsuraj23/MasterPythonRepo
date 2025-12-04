@@ -1,0 +1,40 @@
+-- MySQL Compatibility Issues and Solutions
+
+-- ISSUE 1: IDENTITY(1,1) is SQL Server syntax
+-- SQL Server: IDENTITY(1,1)
+-- MySQL Solution: AUTO_INCREMENT
+
+-- ISSUE 2: ISNULL() is SQL Server function
+-- SQL Server: ISNULL(column, 'default')
+-- MySQL Solution: IFNULL(column, 'default') or COALESCE(column, 'default')
+
+-- ISSUE 3: IIF() is SQL Server function
+-- SQL Server: IIF(condition, true_value, false_value)
+-- MySQL Solution: IF(condition, true_value, false_value)
+
+-- ISSUE 4: String concatenation
+-- SQL Server: FirstName + ' ' + LastName
+-- MySQL Solution: CONCAT(FirstName, ' ', LastName)
+
+-- ISSUE 5: DROP INDEX syntax
+-- SQL Server: DROP INDEX index_name ON table_name
+-- MySQL Solution: DROP INDEX index_name ON table_name (same, but different system views)
+
+-- ISSUE 6: System views
+-- SQL Server: sys.indexes, sys.objects
+-- MySQL Solution: information_schema tables
+
+-- ISSUE 7: NVARCHAR data type
+-- SQL Server: NVARCHAR(50)
+-- MySQL Solution: VARCHAR(50) CHARACTER SET utf8mb4
+
+-- ISSUE 8: CHARINDEX function
+-- SQL Server: CHARINDEX('a', column)
+-- MySQL Solution: LOCATE('a', column) or POSITION('a' IN column)
+
+-- ISSUE 9: LEN function
+-- SQL Server: LEN(column)
+-- MySQL Solution: LENGTH(column) or CHAR_LENGTH(column)
+
+-- ISSUE 10: ROW_NUMBER() OVER syntax
+-- Both SQL Server and MySQL support this, but MySQL requires specific version (5.8+)

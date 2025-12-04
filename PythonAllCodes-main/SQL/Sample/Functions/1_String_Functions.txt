@@ -1,0 +1,31 @@
+-- String Functions Examples
+
+-- CONCAT - Concatenate strings
+SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM CUSTOMER;
+
+-- LENGTH/LEN - Get string length
+SELECT FirstName, LENGTH(FirstName) AS NameLength FROM CUSTOMER;
+
+-- SUBSTRING - Extract part of string
+SELECT FirstName, SUBSTRING(FirstName, 1, 3) AS FirstThreeChars FROM CUSTOMER;
+
+-- REPLACE - Replace part of string
+SELECT Phone, REPLACE(Phone, '1', '*') AS MaskedPhone FROM CUSTOMER;
+
+-- UPPER - Convert to uppercase
+SELECT UPPER(FirstName) AS UpperFirstName FROM CUSTOMER;
+
+-- LOWER - Convert to lowercase
+SELECT LOWER(LastName) AS LowerLastName FROM CUSTOMER;
+
+-- TRIM - Remove leading/trailing spaces
+SELECT TRIM('  ' + FirstName + '  ') AS TrimmedName FROM CUSTOMER;
+
+-- LEFT - Get leftmost characters
+SELECT LEFT(FirstName, 2) AS FirstTwoChars FROM CUSTOMER;
+
+-- RIGHT - Get rightmost characters
+SELECT RIGHT(Phone, 4) AS LastFourDigits FROM CUSTOMER;
+
+-- LOCATE/POSITION - Find position of substring
+SELECT FirstName, LOCATE('a', FirstName) AS PositionOfA FROM CUSTOMER;

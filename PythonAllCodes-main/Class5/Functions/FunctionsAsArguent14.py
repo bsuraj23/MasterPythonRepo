@@ -4,14 +4,18 @@
 def add_all(*args):
     return sum(args)
 
+#code to get all args and sum them
+
+
 print(add_all(1, 2, 3, 4))
 
 # Example 2: *args - print all arguments
 def print_args(*args):
     print(args)
 
-print_args("apple", "banana", "cherry")
 
-# Example 3: **kwargs - print key-value pairs
-def show_kwargs(**kwargs):
-    print
+# print_args("apple", "banana", "cherry")
+
+# # Example 3: **kwargs - print key-value pairs
+# def show_kwargs(**kwargs):
+#     print

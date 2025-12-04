@@ -1,0 +1,39 @@
+-- Correlated Subqueries Examples
+
+-- Correlated subquery references columns from outer query
+
+-- Find customers who have above-average AreaCode for their LastName group
+SELECT c1.CustomerId, c1.FirstName, c1.LastName, c1.AreaCode
+FROM CUSTOMER c1
+WHERE c1.AreaCode > (
+    SELECT AVG(c2.AreaCode)
+    FROM CUSTOMER c2
+    WHERE c2.LastName = c1.LastName AND c2.AreaCode IS NOT NULL
+);
+
+-- Find customers with maximum AreaCode in their LastName group
+SELECT c1.CustomerId, c1.FirstName, c1.LastName, c1.AreaCode
+FROM CUSTOMER c1
+WHERE c1.AreaCode = (
+    SELECT MAX(c2.AreaCode)
+    FROM CUSTOMER c2
+    WHERE c2.LastName = c1.LastName
+);
+
+-- Using EXISTS with correlated subquery
+SELECT c.CustomerId, c.FirstName, c.LastName
+FROM CUSTOMER c
+WHERE EXISTS (
+    SELECT 1
+    FROM Orders o
+    WHERE o.CustomerId = c.CustomerId AND o.TotalAmount > 100
+);
+
+-- Using NOT EXISTS
+SELECT c.CustomerId, c.FirstName, c.LastName
+FROM CUSTOMER c
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM Orders o
+    WHERE o.CustomerId = c.CustomerId
+);

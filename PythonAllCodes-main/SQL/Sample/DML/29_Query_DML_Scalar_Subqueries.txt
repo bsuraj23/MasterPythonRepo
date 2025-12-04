@@ -1,0 +1,23 @@
+-- Scalar Subqueries Examples
+
+-- Scalar subquery returns a single value
+
+-- Find customers with AreaCode greater than average
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE AreaCode > (SELECT AVG(AreaCode) FROM CUSTOMER WHERE AreaCode IS NOT NULL);
+
+-- Find customers with maximum AreaCode
+SELECT CustomerId, FirstName, LastName, AreaCode
+FROM CUSTOMER
+WHERE AreaCode = (SELECT MAX(AreaCode) FROM CUSTOMER);
+
+-- Using scalar subquery in SELECT clause
+SELECT CustomerId, FirstName, LastName, AreaCode,
+       (SELECT AVG(AreaCode) FROM CUSTOMER WHERE AreaCode IS NOT NULL) AS AvgAreaCode
+FROM CUSTOMER;
+
+-- Scalar subquery with UPDATE
+UPDATE CUSTOMER 
+SET AreaCode = (SELECT MAX(AreaCode) FROM CUSTOMER WHERE CustomerId != CUSTOMER.CustomerId)
+WHERE AreaCode IS NULL;

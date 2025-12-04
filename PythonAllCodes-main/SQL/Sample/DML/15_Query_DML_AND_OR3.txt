@@ -1,0 +1,2 @@
+select * from CUSTOMER
+where LastName='Smith' and (FirstName='John' or FirstName='Smith')
