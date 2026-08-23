@@ -21,3 +21,5 @@ print(rect.area())  # Output: 50
 
 
 
+#from abc import ABC   why this 
+# The `ABC` module stands for "Abstract Base Classes". It provides a way to define abstract classes in Python. An abstract class is a class that cannot be instantiated and is meant to be subclassed. By inheriting from `ABC`, we can create an abstract class that can contain abstract methods, which are methods that must be implemented by any subclass. This allows us to enforce a certain interface or contract for the subclasses, ensuring that they implement specific functionality.
